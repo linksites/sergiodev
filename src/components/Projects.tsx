@@ -30,7 +30,6 @@ function ProjectCard({ project }: { project: Project }) {
         href={project.url}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`Abrir o site ${project.title}`}
         className="relative block h-44 overflow-hidden border-b border-edge bg-bg"
       >
         <Image

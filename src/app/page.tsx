@@ -1,5 +1,9 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Stack from "@/components/Stack";
+import Services from "@/components/Services";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -7,7 +11,11 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
+        <About />
+        <Stack />
+        <Services />
       </main>
+      <Footer />
     </>
   );
 }

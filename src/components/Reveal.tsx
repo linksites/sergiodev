@@ -15,13 +15,8 @@ export default function Reveal({ children, delay = 0, className = "" }: Props) {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    if (
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      setShown(true);
-      return;
-    }
+    // Usuários com prefers-reduced-motion já veem o conteúdo visível via CSS
+    // (.reveal recebe opacity:1 no media query), então só observamos aqui.
     const io = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {

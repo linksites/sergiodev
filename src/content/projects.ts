@@ -54,7 +54,7 @@ export const projects: Project[] = [
     description:
       "Site de marca pessoal para mestre de jiu-jitsu em Portugal: trajetória, vídeos, seminários e contato.",
     tags: ["Next.js", "React", "Responsivo"],
-    url: "https://linksites.github.io/ivanleal/",
+    url: "https://ivanleal.vercel.app/",
     image: "/images/projects/ivanleal.webp",
     repo: "https://github.com/linksites/ivanleal",
   },

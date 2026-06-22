@@ -15,10 +15,12 @@ create table if not exists public.contacts (
 -- ninguém anônimo consegue ler os dados — só o painel do Supabase (service role).
 alter table public.contacts enable row level security;
 
--- Permite apenas INSERT anônimo (envio do formulário pelo site).
+-- Permite apenas INSERT do site (papel public cobre o request anônimo da
+-- chave publicável). Sem policy de SELECT, a leitura segue bloqueada.
 drop policy if exists "anon pode inserir contato" on public.contacts;
-create policy "anon pode inserir contato"
+drop policy if exists "permitir insert do site" on public.contacts;
+create policy "permitir insert do site"
   on public.contacts
   for insert
-  to anon
+  to public
   with check (true);

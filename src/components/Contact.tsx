@@ -195,8 +195,10 @@ function Field({
 }) {
   return (
     <div>
-      <label className="mb-1.5 block text-xs font-medium text-muted">{label}</label>
-      {children}
+      <label className="block">
+        <span className="mb-1.5 block text-xs font-medium text-muted">{label}</span>
+        {children}
+      </label>
       {error && <p className="mt-1 text-xs text-red-400">{error}</p>}
     </div>
   );

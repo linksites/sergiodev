@@ -25,13 +25,14 @@ export default function Projects() {
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <a
-      href={project.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="group flex flex-col overflow-hidden rounded-xl border border-edge bg-surface transition-all hover:-translate-y-1 hover:border-accent/60"
-    >
-      <div className="relative h-44 overflow-hidden border-b border-edge bg-bg">
+    <article className="group flex flex-col overflow-hidden rounded-xl border border-edge bg-surface transition-all hover:-translate-y-1 hover:border-accent/60">
+      <a
+        href={project.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Abrir o site ${project.title}`}
+        className="relative block h-44 overflow-hidden border-b border-edge bg-bg"
+      >
         <Image
           src={project.image}
           alt={`Captura do site ${project.title}`}
@@ -42,7 +43,7 @@ function ProjectCard({ project }: { project: Project }) {
         <span className="absolute left-3 top-3 rounded border border-edge-2 bg-bg/80 px-2 py-1 font-mono text-[10px] text-muted backdrop-blur">
           {project.category}
         </span>
-      </div>
+      </a>
 
       <div className="flex flex-1 flex-col p-5">
         <h3 className="text-base font-semibold">{project.title}</h3>
@@ -59,11 +60,27 @@ function ProjectCard({ project }: { project: Project }) {
             </span>
           ))}
         </div>
-        <span className="mt-4 inline-flex items-center gap-1.5 font-mono text-xs text-accent">
-          Ver site
-          <span className="transition-transform group-hover:translate-x-1">→</span>
-        </span>
+        <div className="mt-4 flex items-center gap-4 border-t border-edge pt-4 font-mono text-xs">
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-accent transition-transform hover:translate-x-0.5"
+          >
+            Ver site →
+          </a>
+          {project.repo && (
+            <a
+              href={project.repo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-faint transition-colors hover:text-ink"
+            >
+              {"</>"} Ver código
+            </a>
+          )}
+        </div>
       </div>
-    </a>
+    </article>
   );
 }

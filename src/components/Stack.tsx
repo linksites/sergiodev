@@ -35,7 +35,7 @@ export default function Stack() {
           {groups.map((group, i) => (
             <Reveal
               key={group.label}
-              delay={i * 90}
+              delay={i * 60}
               className="rounded-xl border border-edge bg-surface p-5 transition-colors hover:border-edge-2"
             >
               <p className="mb-4 font-mono text-xs uppercase tracking-[0.15em] text-accent">

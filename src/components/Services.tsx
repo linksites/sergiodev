@@ -91,7 +91,7 @@ export default function Services() {
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
-            <Reveal key={service.title} delay={i * 80}>
+            <Reveal key={service.title} delay={i * 60}>
               <div className="group h-full rounded-xl border border-edge bg-surface p-6 transition-all hover:-translate-y-1 hover:border-accent/60">
                 <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg border border-edge-2 bg-surface-2 text-accent">
                   {service.icon}

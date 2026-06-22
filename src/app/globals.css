@@ -59,16 +59,16 @@ body {
 }
 
 .animate-fade-up {
-  animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 /* Scroll reveal */
 .reveal {
   opacity: 0;
-  transform: translateY(26px);
+  transform: translateY(14px);
   transition:
-    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
   will-change: opacity, transform;
 }
 .reveal-in {
@@ -79,14 +79,14 @@ body {
 /* Aurora animada no hero */
 @keyframes aurora-a {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-40px, 30px) scale(1.15); }
+  50% { transform: translate(-22px, 16px) scale(1.08); }
 }
 @keyframes aurora-b {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(50px, -30px) scale(1.1); }
+  50% { transform: translate(26px, -16px) scale(1.06); }
 }
-.aurora-a { animation: aurora-a 16s ease-in-out infinite; }
-.aurora-b { animation: aurora-b 20s ease-in-out infinite; }
+.aurora-a { animation: aurora-a 24s ease-in-out infinite; }
+.aurora-b { animation: aurora-b 28s ease-in-out infinite; }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }

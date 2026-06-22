@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Sérgio Rodrigues — Desenvolvedor Full Stack JavaScript",
   description:
-    "Desenvolvedor Full Stack JavaScript. Construo sistemas, sites e automações com React, Node, TypeScript e IA. Fundador da TECHLAB.",
+    "Desenvolvedor Full Stack JavaScript e CEO. Construo sistemas, sites e automações com React, Node, TypeScript e IA.",
   keywords: [
     "desenvolvedor full stack",
     "React",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: "Sérgio Rodrigues — Desenvolvedor Full Stack JavaScript",
     description:
-      "Construo sistemas, sites e automações com React, Node, TypeScript e IA. Fundador da TECHLAB.",
+      "Construo sistemas, sites e automações com React, Node, TypeScript e IA. CEO e desenvolvedor full stack.",
     siteName: "Sérgio Rodrigues",
   },
   twitter: {
@@ -56,6 +56,12 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
+      <head>
+        <noscript>
+          {/* Sem JS, garante que o conteúdo com scroll-reveal apareça */}
+          <style>{`.reveal{opacity:1 !important;transform:none !important}`}</style>
+        </noscript>
+      </head>
       <body>{children}</body>
     </html>
   );

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
 import { projects, type Project } from "@/content/projects";
 
 export default function Projects() {
@@ -14,8 +15,10 @@ export default function Projects() {
         />
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
-            <ProjectCard key={project.url} project={project} />
+          {projects.map((project, i) => (
+            <Reveal key={project.url} delay={(i % 3) * 80}>
+              <ProjectCard project={project} />
+            </Reveal>
           ))}
         </div>
       </div>
@@ -25,7 +28,7 @@ export default function Projects() {
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="group flex flex-col overflow-hidden rounded-xl border border-edge bg-surface transition-all hover:-translate-y-1 hover:border-accent/60">
+    <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-edge bg-surface transition-all hover:-translate-y-1 hover:border-accent/60">
       <a
         href={project.url}
         target="_blank"

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
 
 const skills = [
   "UX/UI Design",
@@ -16,7 +17,7 @@ export default function About() {
   return (
     <section id="sobre" className="border-t border-edge px-6 py-24">
       <div className="mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[0.85fr_1.15fr]">
-        <div className="relative mx-auto w-full max-w-sm">
+        <Reveal className="relative mx-auto w-full max-w-sm">
           <div className="overflow-hidden rounded-2xl border border-edge-2">
             <Image
               src="/images/sergio-rodrigues.webp"
@@ -31,20 +32,19 @@ export default function About() {
             <span className="text-accent">{"</>"}</span>{" "}
             <span className="text-muted">full stack dev</span>
           </div>
-        </div>
+        </Reveal>
 
         <div>
-          <SectionHeading number="01" tag="Sobre" title="Dev que pensa como fundador" />
+          <SectionHeading number="01" tag="Sobre" title="Dev que pensa como CEO" />
           <p className="mb-5 text-lg leading-relaxed text-muted">
             Sou Sérgio Rodrigues, desenvolvedor full stack sênior. Há mais de uma
             década construindo software — de sites e sistemas a plataformas SaaS e
             automações com inteligência artificial.
           </p>
           <p className="mb-5 text-lg leading-relaxed text-muted">
-            Dirijo a <span className="font-medium text-ink">TECHLAB</span>, empresa
-            de tecnologia focada em desenvolvimento web, sistemas SaaS, automações
-            com IA e apps mobile. Construo pensando no resultado de negócio — não só
-            na tela.
+            Como CEO e desenvolvedor, lidero projetos de tecnologia ponta a ponta —
+            desenvolvimento web, sistemas SaaS, automações com IA e apps mobile.
+            Construo pensando no resultado de negócio, não só na tela.
           </p>
 
           <blockquote className="my-6 rounded-r-lg border-l-2 border-accent bg-surface px-5 py-4 text-base italic text-muted">

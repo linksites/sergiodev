@@ -1,4 +1,5 @@
 import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
 
 type Service = {
   title: string;
@@ -85,31 +86,32 @@ export default function Services() {
           number="04"
           tag="Serviços"
           title="O que eu construo"
-          subtitle="Soluções de tecnologia ponta a ponta, com nota fiscal via TECHLAB."
+          subtitle="Soluções de tecnologia ponta a ponta, com emissão de nota fiscal."
         />
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <div
-              key={service.title}
-              className="group rounded-xl border border-edge bg-surface p-6 transition-all hover:-translate-y-1 hover:border-accent/60"
-            >
-              <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg border border-edge-2 bg-surface-2 text-accent">
-                {service.icon}
+          {services.map((service, i) => (
+            <Reveal key={service.title} delay={i * 80}>
+              <div className="group h-full rounded-xl border border-edge bg-surface p-6 transition-all hover:-translate-y-1 hover:border-accent/60">
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg border border-edge-2 bg-surface-2 text-accent">
+                  {service.icon}
+                </div>
+                <h3 className="mb-2 text-base font-semibold">{service.title}</h3>
+                <p className="mb-4 text-sm leading-relaxed text-muted">
+                  {service.desc}
+                </p>
+                <div className="flex flex-wrap gap-1.5">
+                  {service.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded border border-edge bg-bg px-2 py-1 font-mono text-[10px] text-faint"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
-              <h3 className="mb-2 text-base font-semibold">{service.title}</h3>
-              <p className="mb-4 text-sm leading-relaxed text-muted">{service.desc}</p>
-              <div className="flex flex-wrap gap-1.5">
-                {service.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded border border-edge bg-bg px-2 py-1 font-mono text-[10px] text-faint"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

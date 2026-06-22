@@ -8,11 +8,11 @@ export default function Hero() {
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-accent/10 blur-[120px]"
+        className="aurora-a pointer-events-none absolute -right-40 -top-40 h-[500px] w-[500px] rounded-full bg-accent/10 blur-[120px]"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -bottom-32 -left-32 h-[400px] w-[400px] rounded-full bg-accent-2/10 blur-[120px]"
+        className="aurora-b pointer-events-none absolute -bottom-32 -left-32 h-[400px] w-[400px] rounded-full bg-accent-2/10 blur-[120px]"
       />
 
       <div className="mx-auto grid w-full max-w-6xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
@@ -32,14 +32,13 @@ export default function Hero() {
           </h1>
 
           <p className="caret mt-4 font-mono text-xl text-accent sm:text-2xl">
-            Full Stack Developer
+            CEO &amp; Full Stack Developer
           </p>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
             Construo produtos digitais de ponta a ponta — do banco de dados ao
-            pixel. Sistemas, SaaS e automações com IA, com a visão estratégica de
-            quem também entende de negócios. Fundador da{" "}
-            <span className="font-medium text-ink">TECHLAB</span>.
+            pixel. Sistemas, SaaS e automações com IA, unindo visão de negócio e
+            execução técnica.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
@@ -127,9 +126,9 @@ function CodePanel() {
             <span className="text-faint">,</span>
             {"\n"}
             {"  "}
-            <span className="text-muted">empresa</span>
+            <span className="text-muted">cargo</span>
             <span className="text-faint">: </span>
-            <span className="text-emerald-300">&quot;TECHLAB&quot;</span>
+            <span className="text-emerald-300">&quot;CEO &amp; Full Stack&quot;</span>
             <span className="text-faint">,</span>
             {"\n"}
             {"  "}

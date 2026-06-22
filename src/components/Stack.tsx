@@ -1,4 +1,5 @@
 import SectionHeading from "./SectionHeading";
+import Reveal from "./Reveal";
 
 const groups = [
   {
@@ -31,9 +32,10 @@ export default function Stack() {
         />
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {groups.map((group) => (
-            <div
+          {groups.map((group, i) => (
+            <Reveal
               key={group.label}
+              delay={i * 90}
               className="rounded-xl border border-edge bg-surface p-5 transition-colors hover:border-edge-2"
             >
               <p className="mb-4 font-mono text-xs uppercase tracking-[0.15em] text-accent">
@@ -47,7 +49,7 @@ export default function Stack() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>

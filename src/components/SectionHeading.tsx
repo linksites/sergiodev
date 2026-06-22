@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 type Props = {
   number: string;
   tag: string;
@@ -7,7 +9,7 @@ type Props = {
 
 export default function SectionHeading({ number, tag, title, subtitle }: Props) {
   return (
-    <div className="mb-12 max-w-2xl">
+    <Reveal className="mb-12 max-w-2xl">
       <p className="mb-3 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-faint">
         <span className="text-accent">{number}</span>
         <span className="h-px w-6 bg-edge-2" />
@@ -17,6 +19,6 @@ export default function SectionHeading({ number, tag, title, subtitle }: Props) 
       {subtitle && (
         <p className="mt-4 text-lg leading-relaxed text-muted">{subtitle}</p>
       )}
-    </div>
+    </Reveal>
   );
 }

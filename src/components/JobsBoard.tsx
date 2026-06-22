@@ -156,6 +156,8 @@ export default function JobsBoard() {
   }
 
   useEffect(() => {
+    // Carga inicial das vagas; o setState aqui é intencional (fetch on mount).
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     load();
   }, []);
 

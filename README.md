@@ -1,40 +1,52 @@
 # Sérgio Rodrigues — Portfólio
 
-Site institucional e portfólio profissional de Sérgio Rodrigues, Dev & UX/UI Designer Senior, fundador da TECHLAB.
+Portfólio profissional de Sérgio Rodrigues, desenvolvedor Full Stack JavaScript.
 
 🌐 **[sergiorodrigues.dev.br](https://sergiorodrigues.dev.br)**
 
-## Sobre
-
-Portfólio desenvolvido em HTML/CSS puro, com deploy automático via GitHub Pages. Apresenta serviços, projetos, empresas e formulário de contato.
-
-**Seções:**
-- Hero com stack e estatísticas de carreira
-- Sobre — trajetória Dev + Advocacia
-- Serviços — Sites, SaaS, Automação IA, Apps, Tráfego Pago, LegalTech
-- Portfólio — projetos reais entregues
-- Empresas — TECHLAB · SRADV · RMD Agency
-- Depoimentos e Blog
-- Contato com formulário e WhatsApp
-
 ## Stack
 
-- HTML5 + CSS3 puro (sem framework)
-- Fontes: Inter + JetBrains Mono (Google Fonts)
-- Deploy: GitHub Pages via GitHub Actions
+- **[Next.js 16](https://nextjs.org)** (App Router) + **React 19**
+- **TypeScript**
+- **Tailwind CSS v4**
+- **[Supabase](https://supabase.com)** — Postgres + SDK (formulário de contato e conteúdo dinâmico)
+- Deploy estático no **GitHub Pages** via GitHub Actions
+
+## Arquitetura
+
+Site estático (`next build` com `output: 'export'`) hospedado no GitHub Pages.
+Dados dinâmicos (contato, depoimentos) consumidos diretamente do **Supabase**
+via SDK no cliente, protegidos por **Row Level Security (RLS)**.
+
+```
+Browser (Next.js estático)  ──►  Supabase (Postgres + RLS)
+```
+
+## Desenvolvimento
+
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # gera /out (export estático)
+npm run lint
+```
+
+### Variáveis de ambiente
+
+Crie `.env.local` (ver `.env.example`):
+
+```
+NEXT_PUBLIC_SUPABASE_URL=...
+NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+```
+
+No deploy, as mesmas chaves são configuradas como **GitHub Secrets**.
 
 ## Deploy
 
-Todo push na branch `master` dispara o deploy automático.
-
-```bash
-git add .
-git commit -m "descrição da alteração"
-git push
-```
+Todo push na branch `master` dispara build e deploy automáticos via GitHub Actions.
 
 ## Contato
 
 - WhatsApp: [(91) 98246-0001](https://wa.me/5591982460001)
-- E-mail: contato@sergiorodrigues.dev.br
-- TECHLAB CNPJ: 43.985.397/0001-20
+- TECHLAB · CNPJ 43.985.397/0001-20

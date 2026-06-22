@@ -4,11 +4,11 @@ import { useState } from "react";
 import Link from "next/link";
 
 const links = [
-  { href: "#sobre", label: "Sobre" },
-  { href: "#stack", label: "Stack" },
-  { href: "#projetos", label: "Projetos" },
-  { href: "#servicos", label: "Serviços" },
-  { href: "#contato", label: "Contato" },
+  { href: "/#sobre", label: "Sobre" },
+  { href: "/#stack", label: "Stack" },
+  { href: "/#projetos", label: "Projetos" },
+  { href: "/#servicos", label: "Serviços" },
+  { href: "/#contato", label: "Contato" },
 ];
 
 export default function Nav() {
@@ -18,14 +18,14 @@ export default function Nav() {
     <nav className="fixed inset-x-0 top-0 z-50 border-b border-edge bg-bg/80 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link
-          href="#top"
+          href="/"
           className="font-mono text-sm tracking-tight text-accent"
           onClick={() => setOpen(false)}
         >
           sergiorodrigues<span className="text-faint">.dev.br</span>
         </Link>
 
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-7 md:flex">
           {links.map((l) => (
             <li key={l.href}>
               <Link
@@ -36,6 +36,15 @@ export default function Nav() {
               </Link>
             </li>
           ))}
+          <li>
+            <Link
+              href="/vagas"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-opacity hover:opacity-80"
+            >
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
+              Vagas Tech
+            </Link>
+          </li>
         </ul>
 
         <div className="flex items-center gap-2">
@@ -73,6 +82,16 @@ export default function Nav() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link
+                href="/vagas"
+                onClick={() => setOpen(false)}
+                className="flex items-center gap-2 rounded-lg px-3 py-2.5 text-sm font-medium text-accent hover:bg-surface"
+              >
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
+                Vagas Tech
+              </Link>
+            </li>
             <li className="mt-2">
               <a
                 href="https://wa.me/5591982460001"

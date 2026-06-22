@@ -19,7 +19,7 @@ export default function About() {
         <div className="relative mx-auto w-full max-w-sm">
           <div className="overflow-hidden rounded-2xl border border-edge-2">
             <Image
-              src="/images/sergio-rodrigues.png"
+              src="/images/sergio-rodrigues.webp"
               alt="Sérgio Rodrigues"
               width={480}
               height={600}

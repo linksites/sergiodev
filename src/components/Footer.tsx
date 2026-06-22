@@ -17,7 +17,7 @@ export default function Footer() {
           <div className="max-w-sm">
             <div className="flex items-center gap-3">
               <Image
-                src="/images/logo-sr.png"
+                src="/images/logo-sr.webp"
                 alt="Sérgio Rodrigues"
                 width={40}
                 height={40}

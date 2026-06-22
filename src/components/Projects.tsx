@@ -2,15 +2,6 @@ import Image from "next/image";
 import SectionHeading from "./SectionHeading";
 import { projects, type Project } from "@/content/projects";
 
-function initials(title: string) {
-  return title
-    .replace(/[^\p{L}\s]/gu, "")
-    .split(/\s+/)
-    .slice(0, 2)
-    .map((w) => w[0]?.toUpperCase() ?? "")
-    .join("");
-}
-
 export default function Projects() {
   return (
     <section id="projetos" className="border-t border-edge bg-surface/30 px-6 py-24">
@@ -40,26 +31,14 @@ function ProjectCard({ project }: { project: Project }) {
       rel="noopener noreferrer"
       className="group flex flex-col overflow-hidden rounded-xl border border-edge bg-surface transition-all hover:-translate-y-1 hover:border-accent/60"
     >
-      <div className="relative h-44 overflow-hidden border-b border-edge">
-        {project.image ? (
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            sizes="(max-width: 768px) 100vw, 33vw"
-            className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-          />
-        ) : (
-          <div className="dot-grid flex h-full items-center justify-center bg-bg">
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-0 bg-accent/5"
-            />
-            <span className="font-mono text-4xl font-semibold text-edge-2 transition-colors group-hover:text-accent/70">
-              {initials(project.title)}
-            </span>
-          </div>
-        )}
+      <div className="relative h-44 overflow-hidden border-b border-edge bg-bg">
+        <Image
+          src={project.image}
+          alt={`Captura do site ${project.title}`}
+          fill
+          sizes="(max-width: 768px) 100vw, 33vw"
+          className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+        />
         <span className="absolute left-3 top-3 rounded border border-edge-2 bg-bg/80 px-2 py-1 font-mono text-[10px] text-muted backdrop-blur">
           {project.category}
         </span>

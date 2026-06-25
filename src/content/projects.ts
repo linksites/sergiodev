@@ -19,6 +19,16 @@ export const projects: Project[] = [
     image: "/images/projects/linksites.webp",
   },
   {
+    title: "Barbearia Alpha",
+    category: "Landing page",
+    description:
+      "Landing page para barbearia com animações cinematográficas ligadas ao scroll (GSAP), rolagem suave e agendamento integrado ao WhatsApp.",
+    tags: ["React", "GSAP", "Tailwind"],
+    url: "https://linksites.github.io/alpha/",
+    image: "/images/projects/barbearia-alpha.webp",
+    repo: "https://github.com/linksites/alpha",
+  },
+  {
     title: "Democrata",
     category: "Landing page",
     description:

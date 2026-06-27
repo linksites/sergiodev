@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -59,10 +60,13 @@ export default function RootLayout({
       <head>
         <noscript>
           {/* Sem JS, garante que o conteúdo com scroll-reveal apareça */}
-          <style>{`.reveal{opacity:1 !important;transform:none !important}`}</style>
+          <style>{`.reveal{opacity:1 !important;transform:none !important;filter:none !important}`}</style>
         </noscript>
       </head>
-      <body>{children}</body>
+      <body>
+        <SmoothScroll />
+        {children}
+      </body>
     </html>
   );
 }

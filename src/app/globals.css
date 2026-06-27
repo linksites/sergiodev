@@ -62,18 +62,21 @@ body {
   animation: fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-/* Scroll reveal */
+/* Scroll reveal — entrada com profundidade (cinematográfico sutil) */
 .reveal {
   opacity: 0;
-  transform: translateY(14px);
+  transform: translateY(28px) scale(0.985);
+  filter: blur(6px);
   transition:
-    opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform;
+    opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
 }
 .reveal-in {
   opacity: 1;
   transform: none;
+  filter: none;
 }
 
 /* Aurora animada no hero */
@@ -89,7 +92,7 @@ body {
 .aurora-b { animation: aurora-b 28s ease-in-out infinite; }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
+  .reveal { opacity: 1; transform: none; filter: none; transition: none; }
   .aurora-a, .aurora-b { animation: none; }
   html { scroll-behavior: auto; }
 }

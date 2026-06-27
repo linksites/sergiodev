@@ -1,6 +1,7 @@
 import Image from "next/image";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
+import Parallax from "./Parallax";
 import { projects, type Project } from "@/content/projects";
 
 export default function Projects() {
@@ -35,13 +36,15 @@ function ProjectCard({ project }: { project: Project }) {
         rel="noopener noreferrer"
         className="relative block h-44 overflow-hidden border-b border-edge bg-bg"
       >
-        <Image
-          src={project.image}
-          alt={`Captura do site ${project.title}`}
-          fill
-          sizes="(max-width: 768px) 100vw, 33vw"
-          className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-        />
+        <Parallax speed={0.04} className="absolute inset-0 scale-110">
+          <Image
+            src={project.image}
+            alt={`Captura do site ${project.title}`}
+            fill
+            sizes="(max-width: 768px) 100vw, 33vw"
+            className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          />
+        </Parallax>
         <span className="absolute left-3 top-3 rounded border border-edge-2 bg-bg/80 px-2 py-1 font-mono text-[10px] text-muted backdrop-blur">
           {project.category}
         </span>

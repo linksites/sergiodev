@@ -1,3 +1,5 @@
+import Parallax from "./Parallax";
+
 const stack = ["TypeScript", "React", "Node.js", "Next.js", "Python", "IA"];
 
 export default function Hero() {
@@ -68,7 +70,9 @@ export default function Hero() {
           </div>
         </div>
 
-        <CodePanel />
+        <Parallax speed={0.08}>
+          <CodePanel />
+        </Parallax>
       </div>
     </section>
   );

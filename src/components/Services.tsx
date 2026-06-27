@@ -86,7 +86,7 @@ export default function Services() {
           number="04"
           tag="Serviços"
           title="O que eu construo"
-          subtitle="Soluções de tecnologia ponta a ponta, com emissão de nota fiscal."
+          subtitle="Soluções de tecnologia ponta a ponta."
         />
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

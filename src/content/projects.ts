@@ -107,4 +107,13 @@ export const projects: Project[] = [
     url: "https://linksites.github.io/sergiorodrigues/",
     image: "/images/projects/sergiorodrigues.webp",
   },
+  {
+    title: "Igor Freitas Advocacia",
+    category: "Site institucional",
+    description:
+      "Site jurídico dark mode com paleta preto e prata, animações scroll com GSAP e identidade visual sofisticada.",
+    tags: ["Next.js", "GSAP", "Tailwind"],
+    url: "https://linksites.github.io/igorfreitas/",
+    image: "/images/projects/igorfreitas.webp",
+  },
 ];

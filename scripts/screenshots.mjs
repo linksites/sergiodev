@@ -11,7 +11,7 @@ import { mkdirSync } from "node:fs";
 
 const sites = [
   ["linksites", "https://linksites.vercel.app/"],
-  ["barbearia-alpha", "https://linksites.github.io/alpha/"],
+  ["barbearia-alfa", "https://linksites.github.io/alfa/"],
   ["democrata", "https://linksites.github.io/democrata/"],
   ["arcadenoe", "https://linksites.github.io/arcadenoe/"],
   ["frigorificocarneboa", "https://linksites.github.io/frigorificocarneboa/"],

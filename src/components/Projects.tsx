@@ -71,16 +71,6 @@ function ProjectCard({ project }: { project: Project }) {
           >
             Ver site →
           </a>
-          {project.repo && (
-            <a
-              href={project.repo}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-faint transition-colors hover:text-ink"
-            >
-              {"</>"} Ver código
-            </a>
-          )}
         </div>
       </div>
     </article>

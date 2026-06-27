@@ -5,7 +5,6 @@ export type Project = {
   tags: string[];
   url: string;
   image: string;
-  repo?: string;
 };
 
 export const projects: Project[] = [
@@ -26,7 +25,6 @@ export const projects: Project[] = [
     tags: ["React", "GSAP", "Tailwind"],
     url: "https://linksites.github.io/alpha/",
     image: "/images/projects/barbearia-alpha.webp",
-    repo: "https://github.com/linksites/alpha",
   },
   {
     title: "Democrata",
@@ -36,7 +34,6 @@ export const projects: Project[] = [
     tags: ["Tailwind", "Responsivo", "WhatsApp"],
     url: "https://linksites.github.io/democrata/",
     image: "/images/projects/democrata.webp",
-    repo: "https://github.com/linksites/democrata",
   },
   {
     title: "Arca de Noé",
@@ -46,7 +43,6 @@ export const projects: Project[] = [
     tags: ["Tailwind", "Responsivo", "SEO"],
     url: "https://linksites.github.io/arcadenoe/",
     image: "/images/projects/arcadenoe.webp",
-    repo: "https://github.com/linksites/arcadenoe",
   },
   {
     title: "Frigorífico Carne Boa",
@@ -56,7 +52,6 @@ export const projects: Project[] = [
     tags: ["Tailwind", "Catálogo", "WhatsApp"],
     url: "https://linksites.github.io/frigorificocarneboa/",
     image: "/images/projects/frigorificocarneboa.webp",
-    repo: "https://github.com/linksites/frigorificocarneboa",
   },
   {
     title: "Ivan Leal JJ",
@@ -66,7 +61,6 @@ export const projects: Project[] = [
     tags: ["Next.js", "React", "Responsivo"],
     url: "https://ivanleal.vercel.app/",
     image: "/images/projects/ivanleal.webp",
-    repo: "https://github.com/linksites/ivanleal",
   },
   {
     title: "Danilo Souza",
@@ -76,7 +70,6 @@ export const projects: Project[] = [
     tags: ["HTML", "CSS", "SEO"],
     url: "https://linksites.github.io/danilo-souza/",
     image: "/images/projects/danilo-souza.webp",
-    repo: "https://github.com/linksites/danilo-souza",
   },
   {
     title: "Almeida Cunha",
@@ -86,7 +79,6 @@ export const projects: Project[] = [
     tags: ["Tailwind", "SEO", "Responsivo"],
     url: "https://linksites.github.io/almeida-cunha/",
     image: "/images/projects/almeida-cunha.webp",
-    repo: "https://github.com/linksites/almeida-cunha",
   },
   {
     title: "Gomes de Deus",
@@ -96,7 +88,6 @@ export const projects: Project[] = [
     tags: ["Tailwind", "SEO", "Responsivo"],
     url: "https://linksites.github.io/gomes-de-deus/",
     image: "/images/projects/gomes-de-deus.webp",
-    repo: "https://github.com/linksites/gomes-de-deus",
   },
   {
     title: "SRADV",
@@ -106,7 +97,6 @@ export const projects: Project[] = [
     tags: ["Tailwind", "SEO", "Performance"],
     url: "https://linksites.github.io/sradv/",
     image: "/images/projects/sradv.webp",
-    repo: "https://github.com/linksites/sradv",
   },
   {
     title: "Escritório Criminal",
@@ -116,6 +106,5 @@ export const projects: Project[] = [
     tags: ["HTML", "CSS", "SEO"],
     url: "https://linksites.github.io/sergiorodrigues/",
     image: "/images/projects/sergiorodrigues.webp",
-    repo: "https://github.com/linksites/sergiorodrigues",
   },
 ];

@@ -34,7 +34,7 @@ export default function Hero() {
           </h1>
 
           <p className="caret mt-4 font-mono text-xl text-accent sm:text-2xl">
-            CEO &amp; Full Stack Developer
+            Full Stack Developer · CEO Techlab &amp; SRADV
           </p>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted">
@@ -79,69 +79,71 @@ export default function Hero() {
 }
 
 function CodePanel() {
+  // Editor sempre escuro (em ambos os temas) — cores de sintaxe fixas,
+  // padrão comum e legível tanto no claro quanto no escuro.
   return (
     <div className="animate-fade-up [animation-delay:120ms]">
-      <div className="overflow-hidden rounded-xl border border-edge bg-surface/80 shadow-2xl backdrop-blur">
-        <div className="flex items-center gap-2 border-b border-edge bg-surface-2/50 px-4 py-3">
+      <div className="overflow-hidden rounded-xl border border-[#1f2a3a] bg-[#0d1119]/95 shadow-2xl backdrop-blur">
+        <div className="flex items-center gap-2 border-b border-[#1f2a3a] bg-[#141a25] px-4 py-3">
           <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
           <span className="h-3 w-3 rounded-full bg-[#febc2e]" />
           <span className="h-3 w-3 rounded-full bg-[#28c840]" />
-          <span className="ml-3 font-mono text-xs text-faint">sergio.ts</span>
+          <span className="ml-3 font-mono text-xs text-[#8793a8]">sergio.ts</span>
         </div>
 
-        <pre className="overflow-x-auto p-5 font-mono text-[13px] leading-relaxed">
+        <pre className="overflow-x-auto p-5 font-mono text-[13px] leading-relaxed text-[#e8eef6]">
           <code>
-            <span className="text-accent-2">const</span>{" "}
-            <span className="text-ink">sergio</span>
-            <span className="text-faint">: </span>
-            <span className="text-accent">Developer</span>
-            <span className="text-faint"> = {"{"}</span>
+            <span className="text-[#818cf8]">const</span>{" "}
+            <span className="text-[#e8eef6]">sergio</span>
+            <span className="text-[#8793a8]">: </span>
+            <span className="text-[#22d3ee]">Developer</span>
+            <span className="text-[#8793a8]"> = {"{"}</span>
             {"\n"}
             {"  "}
-            <span className="text-muted">nome</span>
-            <span className="text-faint">: </span>
-            <span className="text-emerald-300">&quot;Sérgio Rodrigues&quot;</span>
-            <span className="text-faint">,</span>
+            <span className="text-[#a0adc0]">nome</span>
+            <span className="text-[#8793a8]">: </span>
+            <span className="text-[#6ee7b7]">&quot;Sérgio Rodrigues&quot;</span>
+            <span className="text-[#8793a8]">,</span>
             {"\n"}
             {"  "}
-            <span className="text-muted">stack</span>
-            <span className="text-faint">: [</span>
-            <span className="text-emerald-300">&quot;React&quot;</span>
-            <span className="text-faint">, </span>
-            <span className="text-emerald-300">&quot;Node&quot;</span>
-            <span className="text-faint">, </span>
-            <span className="text-emerald-300">&quot;TypeScript&quot;</span>
-            <span className="text-faint">],</span>
+            <span className="text-[#a0adc0]">stack</span>
+            <span className="text-[#8793a8]">: [</span>
+            <span className="text-[#6ee7b7]">&quot;React&quot;</span>
+            <span className="text-[#8793a8]">, </span>
+            <span className="text-[#6ee7b7]">&quot;Node&quot;</span>
+            <span className="text-[#8793a8]">, </span>
+            <span className="text-[#6ee7b7]">&quot;TypeScript&quot;</span>
+            <span className="text-[#8793a8]">],</span>
             {"\n"}
             {"  "}
-            <span className="text-muted">foco</span>
-            <span className="text-faint">: [</span>
-            <span className="text-emerald-300">&quot;SaaS&quot;</span>
-            <span className="text-faint">, </span>
-            <span className="text-emerald-300">&quot;Automação IA&quot;</span>
-            <span className="text-faint">, </span>
-            <span className="text-emerald-300">&quot;APIs&quot;</span>
-            <span className="text-faint">],</span>
+            <span className="text-[#a0adc0]">foco</span>
+            <span className="text-[#8793a8]">: [</span>
+            <span className="text-[#6ee7b7]">&quot;SaaS&quot;</span>
+            <span className="text-[#8793a8]">, </span>
+            <span className="text-[#6ee7b7]">&quot;Automação IA&quot;</span>
+            <span className="text-[#8793a8]">, </span>
+            <span className="text-[#6ee7b7]">&quot;APIs&quot;</span>
+            <span className="text-[#8793a8]">],</span>
             {"\n"}
             {"  "}
-            <span className="text-muted">baseadoEm</span>
-            <span className="text-faint">: </span>
-            <span className="text-emerald-300">&quot;Belém, PA&quot;</span>
-            <span className="text-faint">,</span>
+            <span className="text-[#a0adc0]">baseadoEm</span>
+            <span className="text-[#8793a8]">: </span>
+            <span className="text-[#6ee7b7]">&quot;Belém, PA&quot;</span>
+            <span className="text-[#8793a8]">,</span>
             {"\n"}
             {"  "}
-            <span className="text-muted">cargo</span>
-            <span className="text-faint">: </span>
-            <span className="text-emerald-300">&quot;CEO &amp; Full Stack&quot;</span>
-            <span className="text-faint">,</span>
+            <span className="text-[#a0adc0]">cargo</span>
+            <span className="text-[#8793a8]">: </span>
+            <span className="text-[#6ee7b7]">&quot;CEO Techlab/SRADV · Full Stack&quot;</span>
+            <span className="text-[#8793a8]">,</span>
             {"\n"}
             {"  "}
-            <span className="text-muted">disponivel</span>
-            <span className="text-faint">: </span>
-            <span className="text-amber-300">true</span>
-            <span className="text-faint">,</span>
+            <span className="text-[#a0adc0]">disponivel</span>
+            <span className="text-[#8793a8]">: </span>
+            <span className="text-[#fcd34d]">true</span>
+            <span className="text-[#8793a8]">,</span>
             {"\n"}
-            <span className="text-faint">{"}"};</span>
+            <span className="text-[#8793a8]">{"}"};</span>
           </code>
         </pre>
       </div>

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Sérgio Rodrigues — Desenvolvedor Full Stack JavaScript",
   description:
-    "Desenvolvedor Full Stack JavaScript e CEO. Construo sistemas, sites e automações com React, Node, TypeScript e IA.",
+    "Desenvolvedor Full Stack JavaScript e CEO da Techlab e da SRADV. Construo sistemas, sites e automações com React, Node, TypeScript e IA.",
   keywords: [
     "desenvolvedor full stack",
     "React",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: "Sérgio Rodrigues — Desenvolvedor Full Stack JavaScript",
     description:
-      "Construo sistemas, sites e automações com React, Node, TypeScript e IA. CEO e desenvolvedor full stack.",
+      "Construo sistemas, sites e automações com React, Node, TypeScript e IA. CEO da Techlab e da SRADV e desenvolvedor full stack.",
     siteName: "Sérgio Rodrigues",
   },
   twitter: {
@@ -56,8 +56,16 @@ export default function RootLayout({
     <html
       lang="pt-BR"
       className={`${geistSans.variable} ${geistMono.variable}`}
+      suppressHydrationWarning
     >
       <head>
+        {/* Aplica o tema antes da pintura (evita flash). Padrão dark; respeita
+            preferência salva e, na ausência, a do sistema. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}if(t==='light'){document.documentElement.classList.add('light');}}catch(e){}})();`,
+          }}
+        />
         <noscript>
           {/* Sem JS, garante que o conteúdo com scroll-reveal apareça */}
           <style>{`.reveal{opacity:1 !important;transform:none !important;filter:none !important}`}</style>

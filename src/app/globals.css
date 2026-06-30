@@ -21,8 +21,38 @@
   color-scheme: dark;
 }
 
+/* Tema claro — sobrescreve os tokens usados em todo o site.
+   Paleta clara profissional (off-white frio + acentos com contraste AA). */
+html.light {
+  color-scheme: light;
+  --color-bg: #f5f8fc;
+  --color-surface: #ffffff;
+  --color-surface-2: #eef2f8;
+  --color-edge: #e3e9f2;
+  --color-edge-2: #cdd8e8;
+  --color-accent: #0e7490;
+  --color-accent-2: #4f46e5;
+  --color-accent-3: #059669;
+  --color-ink: #0f1825;
+  --color-muted: #45566c;
+  --color-faint: #64748b;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+/* Transição suave apenas durante a troca de tema (evita jank no load
+   e em outras interações). A classe é adicionada pelo ThemeToggle. */
+html.theme-anim,
+html.theme-anim *,
+html.theme-anim *::before,
+html.theme-anim *::after {
+  transition:
+    background-color 0.32s ease,
+    border-color 0.32s ease,
+    color 0.32s ease,
+    fill 0.32s ease !important;
 }
 
 body {

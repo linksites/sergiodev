@@ -35,14 +35,15 @@ export default function About() {
         </Reveal>
 
         <div>
-          <SectionHeading number="01" tag="Sobre" title="Dev que pensa como CEO" />
+          <SectionHeading number="01" tag="Sobre" title="Dev e CEO da Techlab & SRADV" />
           <p className="mb-5 text-lg leading-relaxed text-muted">
-            Sou Sérgio Rodrigues, desenvolvedor full stack sênior. Há mais de uma
-            década construindo software — de sites e sistemas a plataformas SaaS e
+            Sou Sérgio Rodrigues, desenvolvedor full stack pleno. Há anos
+            construindo software — de sites e sistemas a plataformas SaaS e
             automações com inteligência artificial.
           </p>
           <p className="mb-5 text-lg leading-relaxed text-muted">
-            Como CEO e desenvolvedor, lidero projetos de tecnologia ponta a ponta —
+            Como CEO da Techlab e da SRADV e desenvolvedor, lidero projetos de
+            tecnologia ponta a ponta —
             desenvolvimento web, sistemas SaaS, automações com IA e apps mobile.
             Construo pensando no resultado de negócio, não só na tela.
           </p>

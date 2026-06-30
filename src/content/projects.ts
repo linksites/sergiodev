@@ -18,6 +18,15 @@ export const projects: Project[] = [
     image: "/images/projects/linksites.webp",
   },
   {
+    title: "Murilo Guará",
+    category: "Landing page",
+    description:
+      "Landing page para fisioterapeuta (acupuntura e quiropraxia) com design autoral de fundo claro, grids gradientes, motivo coluna + agulha em SVG animado e revelações cinematográficas no scroll.",
+    tags: ["React", "Framer Motion", "Tailwind"],
+    url: "https://linksites.github.io/muriloguara/",
+    image: "/images/projects/muriloguara.webp",
+  },
+  {
     title: "Barbearia Alfa",
     category: "Landing page",
     description:

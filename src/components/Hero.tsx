@@ -77,7 +77,7 @@ export default function Hero() {
                   src="/images/sergio-rodrigues.webp"
                   alt="Sérgio Rodrigues"
                   fill
-                  priority
+                  loading="eager"
                   sizes="(max-width: 1024px) 100vw, 42vw"
                   className="object-cover object-top"
                 />

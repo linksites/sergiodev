@@ -12,26 +12,48 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
  */
 export default function SmoothScroll() {
   useEffect(() => {
+    const offset = -96;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) return;
-
-    gsap.registerPlugin(ScrollTrigger);
-
-    const lenis = new Lenis({
-      duration: 1.1,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      smoothWheel: true,
-    });
-
     const html = document.documentElement;
     const prevScrollBehavior = html.style.scrollBehavior;
-    html.style.scrollBehavior = "auto";
+    let lenis: Lenis | null = null;
+    let raf: ((time: number) => void) | null = null;
 
-    lenis.on("scroll", ScrollTrigger.update);
+    function scrollToHash(hash: string, updateUrl?: string) {
+      if (!hash || hash === "#") return false;
+      const dest = document.querySelector(hash);
+      if (!dest) return false;
 
-    const raf = (time: number) => lenis.raf(time * 1000);
-    gsap.ticker.add(raf);
-    gsap.ticker.lagSmoothing(0);
+      if (lenis) {
+        lenis.scrollTo(dest as HTMLElement, { offset });
+      } else {
+        const top =
+          (dest as HTMLElement).getBoundingClientRect().top +
+          window.scrollY +
+          offset;
+        window.scrollTo({ top, behavior: reduce ? "auto" : "smooth" });
+      }
+
+      if (updateUrl) history.pushState(null, "", updateUrl);
+      return true;
+    }
+
+    if (!reduce) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      lenis = new Lenis({
+        duration: 1.1,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+      });
+
+      html.style.scrollBehavior = "auto";
+      lenis.on("scroll", ScrollTrigger.update);
+
+      raf = (time: number) => lenis?.raf(time * 1000);
+      gsap.ticker.add(raf);
+      gsap.ticker.lagSmoothing(0);
+    }
 
     const onClick = (e: MouseEvent) => {
       const target = (e.target as HTMLElement)?.closest<HTMLAnchorElement>(
@@ -45,20 +67,26 @@ export default function SmoothScroll() {
       if (isRootHash && window.location.pathname !== "/") return;
 
       const id = isRootHash ? href.slice(1) : href;
-      const dest = document.querySelector(id);
-      if (!dest) return;
-      e.preventDefault();
-      lenis.scrollTo(dest as HTMLElement, { offset: -96 });
-      history.pushState(null, "", isRootHash ? href : id);
+      if (scrollToHash(id, isRootHash ? href : id)) e.preventDefault();
     };
+
+    const onHashChange = () => {
+      window.requestAnimationFrame(() => scrollToHash(window.location.hash));
+    };
+
     document.addEventListener("click", onClick);
+    window.addEventListener("hashchange", onHashChange);
 
     ScrollTrigger.refresh();
+    if (window.location.hash) {
+      window.setTimeout(() => scrollToHash(window.location.hash), 80);
+    }
 
     return () => {
       document.removeEventListener("click", onClick);
-      gsap.ticker.remove(raf);
-      lenis.destroy();
+      window.removeEventListener("hashchange", onHashChange);
+      if (raf) gsap.ticker.remove(raf);
+      lenis?.destroy();
       html.style.scrollBehavior = prevScrollBehavior;
     };
   }, []);

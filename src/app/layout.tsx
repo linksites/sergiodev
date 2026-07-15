@@ -57,15 +57,10 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${geistSans.variable} ${geistMono.variable}`}
+      className={`${geistSans.variable} ${geistMono.variable} dark`}
       suppressHydrationWarning
     >
       <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme')||'light';var r=document.documentElement;r.classList.toggle('dark',t==='dark');r.classList.toggle('light',t!=='dark');}catch(e){document.documentElement.classList.add('light');}})();`,
-          }}
-        />
         <noscript>
           <style>{`.reveal{opacity:1 !important;transform:none !important;filter:none !important}`}</style>
         </noscript>

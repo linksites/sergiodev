@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import ThemeToggle from "./ThemeToggle";
 
 const links = [
   { href: "/#sobre", label: "Sobre" },
@@ -53,7 +52,6 @@ export default function Nav() {
         </ul>
 
         <div className="flex items-center gap-2">
-          <ThemeToggle className="rounded-xl" />
           <a
             href="https://wa.me/5591982460001"
             target="_blank"

@@ -35,16 +35,21 @@ export default function SmoothScroll() {
 
     const onClick = (e: MouseEvent) => {
       const target = (e.target as HTMLElement)?.closest<HTMLAnchorElement>(
-        'a[href^="#"]'
+        'a[href^="#"], a[href^="/#"]'
       );
       if (!target) return;
-      const id = target.getAttribute("href");
-      if (!id || id === "#") return;
+      const href = target.getAttribute("href");
+      if (!href || href === "#") return;
+
+      const isRootHash = href.startsWith("/#");
+      if (isRootHash && window.location.pathname !== "/") return;
+
+      const id = isRootHash ? href.slice(1) : href;
       const dest = document.querySelector(id);
       if (!dest) return;
       e.preventDefault();
       lenis.scrollTo(dest as HTMLElement, { offset: -96 });
-      history.pushState(null, "", id);
+      history.pushState(null, "", isRootHash ? href : id);
     };
     document.addEventListener("click", onClick);
 

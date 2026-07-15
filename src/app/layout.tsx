@@ -59,11 +59,11 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        {/* Aplica o tema antes da pintura (evita flash). Padrão dark; respeita
-            preferência salva e, na ausência, a do sistema. */}
+        {/* Aplica o tema antes da pintura (evita flash). Padrão claro para
+            reforçar o redesign; dark fica disponível no seletor. */}
         <script
           dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}if(t==='light'){document.documentElement.classList.add('light');}}catch(e){}})();`,
+            __html: `(function(){try{var t=localStorage.getItem('theme')||'light';var r=document.documentElement;r.classList.toggle('dark',t==='dark');r.classList.toggle('light',t!=='dark');}catch(e){document.documentElement.classList.add('light');}})();`,
           }}
         />
         <noscript>

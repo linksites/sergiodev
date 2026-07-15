@@ -13,21 +13,30 @@ export default function VagasPage() {
   return (
     <>
       <Nav />
-      <main className="px-6 pb-24 pt-28">
-        <div className="mx-auto max-w-4xl">
-          <header className="mb-10">
-            <p className="mb-3 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-faint">
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
-              ao vivo
-            </p>
-            <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-              Vagas Tech
-            </h1>
-            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
-              Vagas remotas de tecnologia agregadas em tempo real de múltiplas
-              fontes públicas, com filtros por stack, nível e origem. Uma demo
-              interativa — busca, normalização de dados e cache no próprio navegador.
-            </p>
+      <main className="paper-noise px-6 pb-24 pt-32">
+        <div className="mx-auto max-w-6xl">
+          <header className="mb-8 grid gap-6 border border-edge bg-surface p-6 sm:p-8 lg:grid-cols-[1fr_320px]">
+            <div>
+              <p className="mb-5 inline-flex border border-edge bg-bg px-3 py-1.5 font-mono text-xs uppercase tracking-[0.18em] text-accent">
+                radar ao vivo
+              </p>
+              <h1 className="max-w-3xl text-4xl font-semibold leading-none tracking-tight sm:text-6xl">
+                Vagas Tech para testar busca, filtros e dados reais.
+              </h1>
+              <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">
+                Vagas remotas agregadas de fontes públicas, normalizadas no
+                navegador e organizadas por stack, nível e origem.
+              </p>
+            </div>
+            <div className="border border-edge bg-bg p-5">
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-faint">
+                Demo full stack
+              </p>
+              <p className="mt-4 text-sm leading-relaxed text-muted">
+                Interface client-side com cache local, fallback de carregamento e
+                dados de APIs públicas.
+              </p>
+            </div>
           </header>
 
           <JobsBoard />

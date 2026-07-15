@@ -9,16 +9,23 @@ type Props = {
 
 export default function SectionHeading({ number, tag, title, subtitle }: Props) {
   return (
-    <Reveal className="mb-12 max-w-2xl">
-      <p className="mb-3 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-faint">
-        <span className="text-accent">{number}</span>
-        <span className="h-px w-6 bg-edge-2" />
+    <Reveal className="mb-12 grid gap-5 md:grid-cols-[180px_1fr] md:items-start">
+      <p className="flex items-center gap-3 font-mono text-xs uppercase text-faint">
+        <span className="inline-flex h-8 w-8 items-center justify-center border border-edge bg-surface text-accent">
+          {number}
+        </span>
         {tag}
       </p>
-      <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{title}</h2>
+      <div className="max-w-3xl">
+        <h2 className="text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
+          {title}
+        </h2>
       {subtitle && (
-        <p className="mt-4 text-lg leading-relaxed text-muted">{subtitle}</p>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
+            {subtitle}
+          </p>
       )}
+      </div>
     </Reveal>
   );
 }

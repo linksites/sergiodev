@@ -11,7 +11,7 @@ const navLinks = [
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="border-t border-edge bg-surface/30 px-6 py-14">
+    <footer className="border-t border-edge bg-ink px-6 py-14 text-bg">
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-wrap justify-between gap-10">
           <div className="max-w-sm">
@@ -21,20 +21,20 @@ export default function Footer() {
                 alt="Sérgio Rodrigues"
                 width={40}
                 height={40}
-                className="rounded-full border border-edge-2"
+                className="border border-bg/25"
               />
-              <span className="font-mono text-sm text-accent">
-                sergiorodrigues<span className="text-faint">.dev.br</span>
+              <span className="font-mono text-sm text-bg">
+                sergio<span className="text-accent">.dev</span>
               </span>
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-faint">
+            <p className="mt-4 text-sm leading-relaxed text-bg/70">
               Desenvolvedor full stack JavaScript. Sistemas, SaaS e automações com
               IA — da ideia à produção.
             </p>
           </div>
 
           <div>
-            <p className="mb-4 font-mono text-xs uppercase tracking-[0.15em] text-faint">
+            <p className="mb-4 font-mono text-xs uppercase tracking-[0.15em] text-bg/50">
               Navegação
             </p>
             <ul className="space-y-2">
@@ -42,7 +42,7 @@ export default function Footer() {
                 <li key={l.href}>
                   <a
                     href={l.href}
-                    className="text-sm text-muted transition-colors hover:text-accent"
+                    className="text-sm text-bg/70 transition-colors hover:text-accent"
                   >
                     {l.label}
                   </a>
@@ -52,10 +52,10 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="mb-4 font-mono text-xs uppercase tracking-[0.15em] text-faint">
+            <p className="mb-4 font-mono text-xs uppercase tracking-[0.15em] text-bg/50">
               Contato
             </p>
-            <ul className="space-y-2 text-sm text-muted">
+            <ul className="space-y-2 text-sm text-bg/70">
               <li>
                 <a
                   href="https://wa.me/5591982460001"
@@ -71,11 +71,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-wrap items-center justify-between gap-3 border-t border-edge pt-6">
-          <p className="text-xs text-faint">
+        <div className="mt-10 flex flex-wrap items-center justify-between gap-3 border-t border-bg/20 pt-6">
+          <p className="text-xs text-bg/55">
             © {year} Sérgio Rodrigues. Todos os direitos reservados.
           </p>
-          <p className="font-mono text-xs text-faint">
+          <p className="font-mono text-xs text-bg/55">
             TECHLAB · CNPJ 43.985.397/0001-20
           </p>
         </div>

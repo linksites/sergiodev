@@ -200,21 +200,21 @@ export default function JobsBoard() {
     );
   }
 
-  const chip = "rounded-full border px-3 py-1 text-xs font-medium transition-colors";
+  const chip = "border px-3 py-1.5 text-xs font-medium transition-colors";
   const chipOn = "border-accent bg-accent/10 text-accent";
-  const chipOff = "border-edge text-muted hover:border-edge-2";
+  const chipOff = "border-edge bg-bg text-muted hover:border-edge-2";
 
   return (
     <div>
       {/* Controles */}
-      <div className="rounded-2xl border border-edge bg-surface p-5">
+      <div className="border border-edge bg-surface p-5">
         <input
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Buscar por cargo, empresa ou tecnologia..."
           aria-label="Buscar vagas"
-          className="w-full rounded-lg border border-edge bg-bg px-4 py-3 text-sm text-ink outline-none placeholder:text-faint focus:border-accent"
+          className="w-full border border-edge bg-bg px-4 py-3 text-sm text-ink outline-none placeholder:text-faint focus:border-accent"
         />
 
         <div className="mt-4 flex flex-wrap gap-2">
@@ -292,21 +292,21 @@ export default function JobsBoard() {
             {Array.from({ length: 6 }).map((_, i) => (
               <div
                 key={i}
-                className="h-24 animate-pulse rounded-xl border border-edge bg-surface/50"
+                className="h-24 animate-pulse border border-edge bg-surface/50"
               />
             ))}
           </div>
         )}
 
         {status === "error" && (
-          <div className="rounded-xl border border-edge bg-surface p-8 text-center">
+          <div className="border border-edge bg-surface p-8 text-center">
             <p className="text-muted">
               Não consegui carregar as vagas agora. As APIs públicas podem estar
               instáveis.
             </p>
             <button
               onClick={() => load(true)}
-              className="mt-4 rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-bg"
+              className="mt-4 bg-ink px-4 py-2 text-sm font-semibold text-bg"
             >
               Tentar novamente
             </button>
@@ -314,7 +314,7 @@ export default function JobsBoard() {
         )}
 
         {status === "ready" && filtered.length === 0 && (
-          <div className="rounded-xl border border-edge bg-surface p-8 text-center text-muted">
+          <div className="border border-edge bg-surface p-8 text-center text-muted">
             Nenhuma vaga encontrada com esses filtros.
           </div>
         )}
@@ -327,7 +327,7 @@ export default function JobsBoard() {
                   href={job.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex flex-col gap-3 rounded-xl border border-edge bg-surface p-5 transition-all hover:-translate-y-0.5 hover:border-accent/60 sm:flex-row sm:items-center sm:justify-between"
+                  className="group flex flex-col gap-3 border border-edge bg-surface p-5 transition-all hover:-translate-y-0.5 hover:border-accent sm:flex-row sm:items-center sm:justify-between"
                 >
                   <div className="min-w-0">
                     <div className="flex flex-wrap items-center gap-2">
@@ -335,7 +335,7 @@ export default function JobsBoard() {
                         {job.title}
                       </h3>
                       {job.seniority !== "—" && (
-                        <span className="rounded border border-edge-2 px-1.5 py-0.5 font-mono text-[10px] text-muted">
+                        <span className="border border-edge-2 px-1.5 py-0.5 font-mono text-[10px] text-muted">
                           {job.seniority}
                         </span>
                       )}
@@ -351,7 +351,7 @@ export default function JobsBoard() {
                         {job.tags.slice(0, 5).map((t) => (
                           <span
                             key={t}
-                            className="rounded bg-bg px-2 py-0.5 font-mono text-[10px] text-faint"
+                            className="border border-edge bg-bg px-2 py-0.5 font-mono text-[10px] text-faint"
                           >
                             {t}
                           </span>
@@ -361,7 +361,7 @@ export default function JobsBoard() {
                   </div>
                   <div className="flex shrink-0 items-center gap-3 text-xs text-faint">
                     <span>{relativeDate(job.date)}</span>
-                    <span className="rounded border border-edge px-2 py-1 font-mono">
+                    <span className="border border-edge px-2 py-1 font-mono">
                       {job.source}
                     </span>
                     <span className="font-mono text-accent">ver →</span>

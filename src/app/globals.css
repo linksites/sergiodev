@@ -1,41 +1,56 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #0a0e14;
-  --color-surface: #11161f;
-  --color-surface-2: #1a2130;
-  --color-edge: #1f2a3a;
-  --color-edge-2: #2b3a52;
-  --color-accent: #22d3ee;
-  --color-accent-2: #818cf8;
-  --color-accent-3: #34d399;
-  --color-ink: #e8eef6;
-  --color-muted: #a0adc0;
-  --color-faint: #8793a8;
+  --color-bg: #f7f1e8;
+  --color-surface: #fffaf2;
+  --color-surface-2: #ece2d3;
+  --color-edge: #ded0bd;
+  --color-edge-2: #b9a58d;
+  --color-accent: #0f766e;
+  --color-accent-2: #b45309;
+  --color-accent-3: #be123c;
+  --color-ink: #17130f;
+  --color-muted: #5f554a;
+  --color-faint: #827568;
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 /* Tema claro — sobrescreve os tokens usados em todo o site.
    Paleta clara profissional (off-white frio + acentos com contraste AA). */
 html.light {
   color-scheme: light;
-  --color-bg: #f5f8fc;
-  --color-surface: #ffffff;
-  --color-surface-2: #eef2f8;
-  --color-edge: #e3e9f2;
-  --color-edge-2: #cdd8e8;
-  --color-accent: #0e7490;
-  --color-accent-2: #4f46e5;
-  --color-accent-3: #059669;
-  --color-ink: #0f1825;
-  --color-muted: #45566c;
-  --color-faint: #64748b;
+  --color-bg: #f7f1e8;
+  --color-surface: #fffaf2;
+  --color-surface-2: #ece2d3;
+  --color-edge: #ded0bd;
+  --color-edge-2: #b9a58d;
+  --color-accent: #0f766e;
+  --color-accent-2: #b45309;
+  --color-accent-3: #be123c;
+  --color-ink: #17130f;
+  --color-muted: #5f554a;
+  --color-faint: #827568;
+}
+
+html.dark {
+  color-scheme: dark;
+  --color-bg: #11100d;
+  --color-surface: #1b1914;
+  --color-surface-2: #252117;
+  --color-edge: #3a3328;
+  --color-edge-2: #5f4e3b;
+  --color-accent: #2dd4bf;
+  --color-accent-2: #f59e0b;
+  --color-accent-3: #fb7185;
+  --color-ink: #f8efe3;
+  --color-muted: #c8bba9;
+  --color-faint: #9f907d;
 }
 
 html {
@@ -63,18 +78,44 @@ body {
   overflow-x: hidden;
 }
 
+section {
+  scroll-margin-top: 112px;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, color-mix(in srgb, var(--color-edge) 42%, transparent) 1px, transparent 1px),
+    linear-gradient(0deg, color-mix(in srgb, var(--color-edge) 34%, transparent) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--color-accent) 12%, transparent), transparent 34%),
+    linear-gradient(315deg, color-mix(in srgb, var(--color-accent-2) 12%, transparent), transparent 36%);
+}
+
 ::selection {
   background: color-mix(in srgb, var(--color-accent) 30%, transparent);
   color: var(--color-ink);
 }
 
 .dot-grid {
-  background-image: radial-gradient(
-    circle at 1px 1px,
-    color-mix(in srgb, var(--color-edge-2) 55%, transparent) 1px,
-    transparent 0
-  );
-  background-size: 28px 28px;
+  background-image:
+    linear-gradient(90deg, color-mix(in srgb, var(--color-edge) 52%, transparent) 1px, transparent 1px),
+    linear-gradient(0deg, color-mix(in srgb, var(--color-edge) 42%, transparent) 1px, transparent 1px);
+  background-size: 34px 34px;
 }
 
 @keyframes fade-up {
@@ -109,21 +150,22 @@ body {
   filter: none;
 }
 
-/* Aurora animada no hero */
-@keyframes aurora-a {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-22px, 16px) scale(1.08); }
+.paper-noise {
+  position: relative;
 }
-@keyframes aurora-b {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(26px, -16px) scale(1.06); }
+
+.paper-noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
 }
-.aurora-a { animation: aurora-a 24s ease-in-out infinite; }
-.aurora-b { animation: aurora-b 28s ease-in-out infinite; }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; filter: none; transition: none; }
-  .aurora-a, .aurora-b { animation: none; }
   html { scroll-behavior: auto; }
 }
 

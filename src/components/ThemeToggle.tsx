@@ -1,29 +1,37 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 
 type Theme = "light" | "dark";
+const themeEvent = "sergio-theme-change";
+
+function getThemeSnapshot(): Theme {
+  if (typeof document === "undefined") return "light";
+  return document.documentElement.classList.contains("dark") ? "dark" : "light";
+}
+
+function subscribeThemeChange(onChange: () => void) {
+  window.addEventListener(themeEvent, onChange);
+  return () => window.removeEventListener(themeEvent, onChange);
+}
 
 export default function ThemeToggle({ className = "" }: { className?: string }) {
-  const [theme, setTheme] = useState<Theme | null>(null);
-
-  // Lê o tema aplicado pelo script inline (em layout) após montar,
-  // evitando divergência de hidratação.
-  useEffect(() => {
-    setTheme(
-      document.documentElement.classList.contains("light") ? "light" : "dark",
-    );
-  }, []);
+  const theme = useSyncExternalStore(
+    subscribeThemeChange,
+    getThemeSnapshot,
+    () => "light",
+  );
 
   function toggle() {
     const root = document.documentElement;
-    const next: Theme = root.classList.contains("light") ? "dark" : "light";
+    const next: Theme = root.classList.contains("dark") ? "light" : "dark";
     root.classList.add("theme-anim");
     root.classList.toggle("light", next === "light");
+    root.classList.toggle("dark", next === "dark");
     try {
       localStorage.setItem("theme", next);
     } catch {}
-    setTheme(next);
+    window.dispatchEvent(new Event(themeEvent));
     window.setTimeout(() => root.classList.remove("theme-anim"), 340);
   }
 
@@ -35,10 +43,10 @@ export default function ThemeToggle({ className = "" }: { className?: string }) 
       onClick={toggle}
       aria-label={isLight ? "Ativar tema escuro" : "Ativar tema claro"}
       title={isLight ? "Tema escuro" : "Tema claro"}
-      className={`flex h-10 w-10 items-center justify-center rounded-lg border border-edge text-muted transition-colors hover:border-accent hover:text-accent ${className}`}
+      className={`flex h-10 w-10 items-center justify-center border border-edge bg-bg text-muted transition-colors hover:border-accent hover:text-accent ${className}`}
     >
       <span suppressHydrationWarning className="flex h-5 w-5 items-center justify-center">
-        {theme === null ? null : isLight ? <MoonIcon /> : <SunIcon />}
+        {isLight ? <MoonIcon /> : <SunIcon />}
       </span>
     </button>
   );

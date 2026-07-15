@@ -76,39 +76,39 @@ export default function Contact() {
   }
 
   const inputClass =
-    "w-full rounded-lg border border-edge bg-bg px-3.5 py-2.5 text-sm text-ink outline-none transition-colors placeholder:text-faint focus:border-accent";
+    "w-full border border-edge bg-bg px-3.5 py-3 text-sm text-ink outline-none transition-colors placeholder:text-faint focus:border-accent";
 
   return (
-    <section id="contato" className="border-t border-edge px-6 py-24">
-      <div className="mx-auto grid max-w-6xl gap-14 lg:grid-cols-2">
+    <section id="contato" className="border-t border-edge bg-surface/45 px-6 py-24">
+      <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[0.9fr_1.1fr]">
         <div>
           <SectionHeading
             number="05"
             tag="Contato"
-            title="Vamos conversar?"
-            subtitle="Tem um projeto em mente? Me chama no WhatsApp ou preencha o formulário — respondo em até 24h."
+            title="Tem uma ideia pronta para ganhar forma?"
+            subtitle="Me chama com o contexto do projeto. Eu retorno com próximos passos, escopo inicial e caminho de entrega."
           />
-          <div className="space-y-3">
+          <div className="grid gap-3">
             <a
               href="https://wa.me/5591982460001"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 rounded-xl border border-edge bg-surface px-4 py-3.5 transition-colors hover:border-accent/60"
+              className="flex items-center justify-between border border-edge bg-surface px-4 py-4 transition-colors hover:border-accent"
             >
-              <span className="font-mono text-xs text-accent">WhatsApp</span>
+              <span className="font-mono text-xs uppercase text-accent">WhatsApp</span>
               <span className="text-sm text-muted">(91) 98246-0001</span>
             </a>
-            <div className="flex items-center gap-3 rounded-xl border border-edge bg-surface px-4 py-3.5">
-              <span className="font-mono text-xs text-accent">Local</span>
+            <div className="flex items-center justify-between border border-edge bg-surface px-4 py-4">
+              <span className="font-mono text-xs uppercase text-accent">Local</span>
               <span className="text-sm text-muted">Belém, Pará — Brasil</span>
             </div>
           </div>
         </div>
 
-        <div className="rounded-2xl border border-edge bg-surface p-6 sm:p-8">
+        <div className="border border-edge bg-surface p-6 shadow-[0_24px_70px_color-mix(in_srgb,var(--color-ink)_8%,transparent)] sm:p-8">
           {status === "success" ? (
             <div className="flex h-full min-h-[300px] flex-col items-center justify-center text-center">
-              <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full border border-accent/40 bg-accent/10 text-2xl text-accent">
+              <div className="mb-4 flex h-14 w-14 items-center justify-center border border-accent/40 bg-accent/10 text-2xl text-accent">
                 ✓
               </div>
               <h3 className="text-lg font-semibold">Mensagem enviada!</h3>
@@ -172,7 +172,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="w-full rounded-lg bg-accent py-3 text-sm font-semibold text-bg transition-opacity hover:opacity-90 disabled:opacity-60"
+                className="w-full bg-ink py-3.5 text-sm font-semibold text-bg transition-opacity hover:opacity-90 disabled:opacity-60"
               >
                 {status === "loading" ? "Enviando..." : "Enviar mensagem"}
               </button>

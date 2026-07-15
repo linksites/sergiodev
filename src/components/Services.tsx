@@ -85,18 +85,22 @@ export default function Services() {
         <SectionHeading
           number="04"
           tag="Serviços"
-          title="O que eu construo"
-          subtitle="Soluções de tecnologia ponta a ponta."
+          title="Do posicionamento ao sistema funcionando."
+          subtitle="Serviços pensados como módulos de entrega: clareza, construção, automação e aquisição."
         />
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 lg:grid-cols-6">
           {services.map((service, i) => (
-            <Reveal key={service.title} delay={i * 60}>
-              <div className="group h-full rounded-xl border border-edge bg-surface p-6 transition-all hover:-translate-y-1 hover:border-accent/60">
-                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg border border-edge-2 bg-surface-2 text-accent">
+            <Reveal
+              key={service.title}
+              delay={i * 60}
+              className={i < 2 ? "lg:col-span-3" : "lg:col-span-2"}
+            >
+              <div className="group h-full border border-edge bg-surface p-6 transition-all hover:-translate-y-1 hover:border-accent">
+                <div className="mb-6 flex h-11 w-11 items-center justify-center border border-edge-2 bg-bg text-accent">
                   {service.icon}
                 </div>
-                <h3 className="mb-2 text-base font-semibold">{service.title}</h3>
+                <h3 className="mb-3 text-xl font-semibold">{service.title}</h3>
                 <p className="mb-4 text-sm leading-relaxed text-muted">
                   {service.desc}
                 </p>
@@ -104,7 +108,7 @@ export default function Services() {
                   {service.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded border border-edge bg-bg px-2 py-1 font-mono text-[10px] text-faint"
+                      className="border border-edge bg-bg px-2 py-1 font-mono text-[10px] uppercase text-faint"
                     >
                       {tag}
                     </span>

@@ -22,17 +22,14 @@ const REMOTIVE_URL =
   "https://remotive.com/api/remote-jobs?category=software-dev&limit=100";
 const REMOTEOK_URL = "https://remoteok.com/api";
 const CACHE_KEY = "vagas-tech-cache-v1";
-const CACHE_TTL = 60 * 60 * 1000; // 1h
+const CACHE_TTL = 60 * 60 * 1000;
 
-// RemoteOK lista todas as vagas remotas e as tags sofrem spam; por isso
-// filtramos pelo TÍTULO (confiável) para manter só cargos de tecnologia.
 function isTechJob(title: string): boolean {
   return /(develop|engineer|programm|software|front[\s-]?end|back[\s-]?end|full[\s-]?stack|dev\s?ops|\bsre\b|\bqa\b|\bdba\b|data (scientist|engineer|analyst|warehouse)|machine learning|\bml\b|\bai\b|\bcloud\b|architect|mobile|android|\bios\b|web\s?dev|tech lead|\bcto\b|security|cyber|blockchain|\bui\/?ux\b)/i.test(
     title
   );
 }
 
-// Repara mojibake (UTF-8 interpretado como Latin-1): "SÃªnior" -> "Sênior".
 function fixText(s: string): string {
   if (!s || !/[ÃÂ][-¿]/.test(s)) return s || "";
   try {
@@ -121,7 +118,6 @@ export default function JobsBoard() {
   const [jobs, setJobs] = useState<Job[]>([]);
   const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
   const [updatedAt, setUpdatedAt] = useState<number | null>(null);
-
   const [query, setQuery] = useState("");
   const [source, setSource] = useState<"all" | Source>("all");
   const [seniority, setSeniority] = useState<"all" | Seniority>("all");
@@ -156,7 +152,6 @@ export default function JobsBoard() {
   }
 
   useEffect(() => {
-    // Carga inicial das vagas; o setState aqui é intencional (fetch on mount).
     // eslint-disable-next-line react-hooks/set-state-in-effect
     load();
   }, []);
@@ -184,8 +179,9 @@ export default function JobsBoard() {
         !activeTags.some((t) =>
           j.tags.map((x) => x.toLowerCase()).includes(t.toLowerCase())
         )
-      )
+      ) {
         return false;
+      }
       if (q) {
         const hay = `${j.title} ${j.company} ${j.tags.join(" ")}`.toLowerCase();
         if (!hay.includes(q)) return false;
@@ -206,7 +202,6 @@ export default function JobsBoard() {
 
   return (
     <div>
-      {/* Controles */}
       <div className="border border-edge bg-surface p-5">
         <input
           type="search"
@@ -261,7 +256,6 @@ export default function JobsBoard() {
         )}
       </div>
 
-      {/* Status bar */}
       <div className="mt-4 flex flex-wrap items-center justify-between gap-2 text-sm text-faint">
         <span>
           {status === "ready" && (
@@ -285,7 +279,6 @@ export default function JobsBoard() {
         </button>
       </div>
 
-      {/* Resultados */}
       <div className="mt-4">
         {status === "loading" && (
           <div className="space-y-3">
@@ -373,7 +366,6 @@ export default function JobsBoard() {
         )}
       </div>
 
-      {/* Créditos exigidos pelos termos das APIs */}
       <p className="mt-8 text-center text-xs text-faint">
         Vagas agregadas das APIs públicas de{" "}
         <a

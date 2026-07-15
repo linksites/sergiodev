@@ -1,0 +1,36 @@
+<svg width="1400" height="900" viewBox="0 0 1400 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="900" fill="#071019"/>
+  <rect x="70" y="70" width="1260" height="760" rx="34" fill="#111821" stroke="#263241" stroke-width="2"/>
+  <rect x="70" y="70" width="1260" height="96" rx="34" fill="#0B1118"/>
+  <text x="118" y="130" fill="#F1F5F9" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" letter-spacing="8">LEXOS</text>
+  <text x="295" y="130" fill="#22C55E" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="7">TECHLAB</text>
+  <rect x="1100" y="100" width="170" height="42" rx="12" fill="#22C55E"/>
+  <text x="1142" y="127" fill="#052E16" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="700">+ Novo</text>
+  <rect x="118" y="222" width="330" height="170" rx="24" fill="#151F2C" stroke="#263241"/>
+  <rect x="488" y="222" width="330" height="170" rx="24" fill="#151F2C" stroke="#263241"/>
+  <rect x="858" y="222" width="330" height="170" rx="24" fill="#151F2C" stroke="#263241"/>
+  <text x="148" y="272" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-size="22">Processos ativos</text>
+  <text x="148" y="340" fill="#22C55E" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="800">128</text>
+  <text x="518" y="272" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-size="22">IA juridica</text>
+  <text x="518" y="340" fill="#38BDF8" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="800">24/7</text>
+  <text x="888" y="272" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-size="22">Receita mensal</text>
+  <text x="888" y="340" fill="#22C55E" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="800">R$</text>
+  <rect x="118" y="448" width="520" height="292" rx="26" fill="#151F2C" stroke="#263241"/>
+  <text x="154" y="506" fill="#F1F5F9" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">Processos recentes</text>
+  <g fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-size="22">
+    <text x="154" y="572">Mayco Roberto Batista</text>
+    <text x="154" y="634">Ana Carolina Ribeiro</text>
+    <text x="154" y="696">Danilo Matheus Souza</text>
+  </g>
+  <g fill="#22C55E">
+    <circle cx="584" cy="562" r="8"/>
+    <circle cx="584" cy="624" r="8"/>
+    <circle cx="584" cy="686" r="8"/>
+  </g>
+  <rect x="686" y="448" width="502" height="292" rx="26" fill="#151F2C" stroke="#263241"/>
+  <text x="722" y="506" fill="#F1F5F9" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">Assistente IA</text>
+  <rect x="722" y="544" width="392" height="54" rx="16" fill="#0B1118" stroke="#263241"/>
+  <text x="748" y="578" fill="#B6C2CF" font-family="Arial, Helvetica, sans-serif" font-size="20">Analise este processo...</text>
+  <rect x="722" y="626" width="240" height="54" rx="16" fill="#22C55E"/>
+  <text x="758" y="660" fill="#052E16" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Gerar resposta</text>
+</svg>

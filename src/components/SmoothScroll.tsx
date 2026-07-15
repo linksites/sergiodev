@@ -23,7 +23,6 @@ export default function SmoothScroll() {
       smoothWheel: true,
     });
 
-    // Lenis controla a posição; desliga o smooth nativo do CSS para não brigar.
     const html = document.documentElement;
     const prevScrollBehavior = html.style.scrollBehavior;
     html.style.scrollBehavior = "auto";
@@ -34,7 +33,6 @@ export default function SmoothScroll() {
     gsap.ticker.add(raf);
     gsap.ticker.lagSmoothing(0);
 
-    // Âncoras internas com a inércia do Lenis.
     const onClick = (e: MouseEvent) => {
       const target = (e.target as HTMLElement)?.closest<HTMLAnchorElement>(
         'a[href^="#"]'
@@ -50,7 +48,6 @@ export default function SmoothScroll() {
     };
     document.addEventListener("click", onClick);
 
-    // Recalcula posições após o layout estabilizar (fontes, imagens).
     ScrollTrigger.refresh();
 
     return () => {

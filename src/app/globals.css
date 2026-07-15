@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #f7f1e8;
-  --color-surface: #fffaf2;
-  --color-surface-2: #ece2d3;
-  --color-edge: #ded0bd;
-  --color-edge-2: #b9a58d;
-  --color-accent: #0f766e;
-  --color-accent-2: #b45309;
-  --color-accent-3: #be123c;
-  --color-ink: #17130f;
-  --color-muted: #5f554a;
-  --color-faint: #827568;
+  --color-bg: #f5f7f6;
+  --color-surface: #ffffff;
+  --color-surface-2: #eef3f1;
+  --color-edge: #dce5e2;
+  --color-edge-2: #9caba6;
+  --color-accent: #16a34a;
+  --color-accent-2: #0284c7;
+  --color-accent-3: #7c3aed;
+  --color-ink: #111827;
+  --color-muted: #4b5563;
+  --color-faint: #7b8794;
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -21,44 +21,40 @@
   color-scheme: light;
 }
 
-/* Tema claro — sobrescreve os tokens usados em todo o site.
-   Paleta clara profissional (off-white frio + acentos com contraste AA). */
 html.light {
   color-scheme: light;
-  --color-bg: #f7f1e8;
-  --color-surface: #fffaf2;
-  --color-surface-2: #ece2d3;
-  --color-edge: #ded0bd;
-  --color-edge-2: #b9a58d;
-  --color-accent: #0f766e;
-  --color-accent-2: #b45309;
-  --color-accent-3: #be123c;
-  --color-ink: #17130f;
-  --color-muted: #5f554a;
-  --color-faint: #827568;
+  --color-bg: #f5f7f6;
+  --color-surface: #ffffff;
+  --color-surface-2: #eef3f1;
+  --color-edge: #dce5e2;
+  --color-edge-2: #9caba6;
+  --color-accent: #16a34a;
+  --color-accent-2: #0284c7;
+  --color-accent-3: #7c3aed;
+  --color-ink: #111827;
+  --color-muted: #4b5563;
+  --color-faint: #7b8794;
 }
 
 html.dark {
   color-scheme: dark;
-  --color-bg: #11100d;
-  --color-surface: #1b1914;
-  --color-surface-2: #252117;
-  --color-edge: #3a3328;
-  --color-edge-2: #5f4e3b;
-  --color-accent: #2dd4bf;
-  --color-accent-2: #f59e0b;
-  --color-accent-3: #fb7185;
-  --color-ink: #f8efe3;
-  --color-muted: #c8bba9;
-  --color-faint: #9f907d;
+  --color-bg: #070b10;
+  --color-surface: #111821;
+  --color-surface-2: #182231;
+  --color-edge: #263241;
+  --color-edge-2: #475569;
+  --color-accent: #22c55e;
+  --color-accent-2: #38bdf8;
+  --color-accent-3: #a78bfa;
+  --color-ink: #f1f5f9;
+  --color-muted: #b6c2cf;
+  --color-faint: #7f8ea3;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* Transição suave apenas durante a troca de tema (evita jank no load
-   e em outras interações). A classe é adicionada pelo ThemeToggle. */
 html.theme-anim,
 html.theme-anim *,
 html.theme-anim *::before,
@@ -102,8 +98,9 @@ body::after {
   z-index: -1;
   pointer-events: none;
   background:
-    linear-gradient(135deg, color-mix(in srgb, var(--color-accent) 12%, transparent), transparent 34%),
-    linear-gradient(315deg, color-mix(in srgb, var(--color-accent-2) 12%, transparent), transparent 36%);
+    radial-gradient(circle at 18% 12%, color-mix(in srgb, var(--color-accent) 16%, transparent), transparent 28%),
+    radial-gradient(circle at 88% 8%, color-mix(in srgb, var(--color-accent-2) 14%, transparent), transparent 30%),
+    linear-gradient(180deg, transparent, color-mix(in srgb, var(--color-surface-2) 38%, transparent));
 }
 
 ::selection {
@@ -133,7 +130,6 @@ body::after {
   animation: fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
-/* Scroll reveal — entrada com profundidade (cinematográfico sutil) */
 .reveal {
   opacity: 0;
   transform: translateY(28px) scale(0.985);
@@ -144,6 +140,7 @@ body::after {
     filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform, filter;
 }
+
 .reveal-in {
   opacity: 1;
   transform: none;
@@ -159,19 +156,31 @@ body::after {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.08;
+  opacity: 0.06;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
   mix-blend-mode: multiply;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; filter: none; transition: none; }
-  html { scroll-behavior: auto; }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 .caret::after {

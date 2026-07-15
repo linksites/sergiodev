@@ -18,7 +18,7 @@ export default function Footer() {
             <div className="flex items-center gap-3">
               <Image
                 src="/images/logo-sr.webp"
-                alt="Sérgio Rodrigues"
+                alt="Sergio Rodrigues"
                 width={40}
                 height={40}
                 className="border border-bg/25"
@@ -28,8 +28,8 @@ export default function Footer() {
               </span>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-bg/70">
-              Desenvolvedor full stack JavaScript. Sistemas, SaaS e automações com
-              IA — da ideia à produção.
+              Founder da TechLab. SaaS, sistemas web e automações com IA, da
+              ideia à produção.
             </p>
           </div>
 
@@ -66,14 +66,14 @@ export default function Footer() {
                   (91) 98246-0001
                 </a>
               </li>
-              <li>Belém, Pará — Brasil</li>
+              <li>Belém, Pará · Brasil</li>
             </ul>
           </div>
         </div>
 
         <div className="mt-10 flex flex-wrap items-center justify-between gap-3 border-t border-bg/20 pt-6">
           <p className="text-xs text-bg/55">
-            © {year} Sérgio Rodrigues. Todos os direitos reservados.
+            © {year} Sergio Rodrigues. Todos os direitos reservados.
           </p>
           <p className="font-mono text-xs text-bg/55">
             TECHLAB · CNPJ 43.985.397/0001-20

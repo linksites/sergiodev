@@ -21,20 +21,9 @@ const iconProps = {
 
 const services: Service[] = [
   {
-    title: "Sites & Landing Pages",
-    desc: "Sites institucionais, landing pages de alta conversão e portfólios com design único e performance otimizada.",
-    tags: ["React", "Next.js", "SEO"],
-    icon: (
-      <svg {...iconProps} aria-hidden>
-        <circle cx="12" cy="12" r="9" />
-        <path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" />
-      </svg>
-    ),
-  },
-  {
-    title: "Sistemas & SaaS",
-    desc: "Sistemas web customizados, plataformas SaaS, painéis administrativos e ferramentas internas para empresas.",
-    tags: ["Node.js", "API REST", "PostgreSQL"],
+    title: "SaaS e sistemas web",
+    desc: "MVPs, painéis, portais e produtos comerciais com autenticação, banco, permissões, billing e deploy.",
+    tags: ["Next.js", "Supabase", "Stripe"],
     icon: (
       <svg {...iconProps} aria-hidden>
         <rect x="3" y="4" width="18" height="6" rx="1.5" />
@@ -44,9 +33,9 @@ const services: Service[] = [
     ),
   },
   {
-    title: "Automação com IA",
-    desc: "Automação de processos com IA, chatbots, integrações com OpenAI e fluxos que economizam horas de trabalho.",
-    tags: ["Python", "OpenAI", "n8n"],
+    title: "IA aplicada ao negócio",
+    desc: "Assistentes, agentes com ferramentas, triagem, geração de documentos e automações conectadas ao fluxo real.",
+    tags: ["AI SDK", "Anthropic", "n8n"],
     icon: (
       <svg {...iconProps} aria-hidden>
         <rect x="5" y="8" width="14" height="11" rx="2" />
@@ -55,24 +44,35 @@ const services: Service[] = [
     ),
   },
   {
-    title: "Apps Mobile",
-    desc: "Aplicativos mobile para iOS e Android com React Native, da ideia ao lançamento nas lojas.",
-    tags: ["React Native", "iOS", "Android"],
+    title: "Landing pages e funis",
+    desc: "Páginas de venda, sites institucionais e experiências rápidas, responsivas e orientadas à conversão.",
+    tags: ["UX", "SEO", "Performance"],
     icon: (
       <svg {...iconProps} aria-hidden>
-        <rect x="7" y="2" width="10" height="20" rx="2" />
-        <path d="M11 18h2" />
+        <circle cx="12" cy="12" r="9" />
+        <path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" />
       </svg>
     ),
   },
   {
-    title: "Tráfego Pago",
-    desc: "Gestão de campanhas Meta e Google Ads com estratégia, criativos e otimização contínua para resultados reais.",
-    tags: ["Meta Ads", "Google Ads", "Pixel"],
+    title: "Integrações e automações",
+    desc: "Conexão entre sistemas, WhatsApp, planilhas, webhooks, pagamentos e rotinas internas.",
+    tags: ["APIs", "Webhooks", "WhatsApp"],
     icon: (
       <svg {...iconProps} aria-hidden>
-        <path d="M3 17l6-6 4 4 7-7" />
-        <path d="M14 8h6v6" />
+        <path d="M7 7h10v10H7z" />
+        <path d="M3 12h4M17 12h4M12 3v4M12 17v4" />
+      </svg>
+    ),
+  },
+  {
+    title: "Consultoria de produto",
+    desc: "Diagnóstico técnico e estratégico para transformar uma ideia solta em roadmap, telas e arquitetura viável.",
+    tags: ["Roadmap", "UX", "Arquitetura"],
+    icon: (
+      <svg {...iconProps} aria-hidden>
+        <path d="M4 19V5" />
+        <path d="M4 7h12l-2 4 2 4H4" />
       </svg>
     ),
   },
@@ -85,8 +85,8 @@ export default function Services() {
         <SectionHeading
           number="04"
           tag="Serviços"
-          title="Do posicionamento ao sistema funcionando."
-          subtitle="Serviços pensados como módulos de entrega: clareza, construção, automação e aquisição."
+          title="Entrega por módulos, com foco em valor de produto."
+          subtitle="O objetivo é sair com algo utilizável, vendável e fácil de evoluir depois da primeira versão."
         />
 
         <div className="grid gap-4 lg:grid-cols-6">

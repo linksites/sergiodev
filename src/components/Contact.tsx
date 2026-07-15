@@ -17,11 +17,11 @@ type Fields = z.infer<typeof schema>;
 type Status = "idle" | "loading" | "success" | "error";
 
 const servicos = [
-  "Site ou Landing Page",
   "Sistema ou SaaS",
-  "Automação com IA",
-  "App Mobile",
-  "Tráfego Pago",
+  "IA aplicada ao negócio",
+  "Landing page ou site",
+  "Integração ou automação",
+  "Consultoria de produto",
   "Outro",
 ];
 
@@ -54,7 +54,6 @@ export default function Contact() {
       return;
     }
 
-    // Honeypot: bots preenchem campos ocultos — fingimos sucesso e ignoramos.
     if (honeypot) {
       setStatus("success");
       return;
@@ -85,8 +84,8 @@ export default function Contact() {
           <SectionHeading
             number="05"
             tag="Contato"
-            title="Tem uma ideia pronta para ganhar forma?"
-            subtitle="Me chama com o contexto do projeto. Eu retorno com próximos passos, escopo inicial e caminho de entrega."
+            title="Tem uma ideia que precisa virar sistema?"
+            subtitle="Me chame com o contexto. Eu retorno com próximos passos, escopo inicial e um caminho de entrega realista."
           />
           <div className="grid gap-3">
             <a
@@ -100,7 +99,7 @@ export default function Contact() {
             </a>
             <div className="flex items-center justify-between border border-edge bg-surface px-4 py-4">
               <span className="font-mono text-xs uppercase text-accent">Local</span>
-              <span className="text-sm text-muted">Belém, Pará — Brasil</span>
+              <span className="text-sm text-muted">Belém, Pará · Brasil</span>
             </div>
           </div>
         </div>
@@ -148,7 +147,7 @@ export default function Contact() {
                 <textarea
                   name="mensagem"
                   rows={4}
-                  placeholder="Conte um pouco sobre seu projeto..."
+                  placeholder="Conte um pouco sobre o projeto, produto ou problema..."
                   className={`${inputClass} resize-none`}
                 />
               </Field>
@@ -172,7 +171,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="w-full bg-ink py-3.5 text-sm font-semibold text-bg transition-opacity hover:opacity-90 disabled:opacity-60"
+                className="w-full bg-accent py-3.5 text-sm font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-60"
               >
                 {status === "loading" ? "Enviando..." : "Enviar mensagem"}
               </button>

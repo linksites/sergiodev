@@ -23,7 +23,7 @@ export default function Nav() {
           className="flex items-center gap-3 font-mono text-sm tracking-tight text-ink"
           onClick={() => setOpen(false)}
         >
-          <span className="flex h-8 w-8 items-center justify-center bg-ink text-[11px] font-semibold text-bg">
+          <span className="flex h-8 w-8 items-center justify-center bg-accent text-[11px] font-semibold text-white">
             SR
           </span>
           <span>
@@ -58,7 +58,7 @@ export default function Nav() {
             href="https://wa.me/5591982460001"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden bg-ink px-4 py-2 text-sm font-semibold text-bg transition-transform hover:-translate-y-0.5 sm:inline-block"
+            className="hidden bg-accent px-4 py-2 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 sm:inline-block"
           >
             Falar comigo
           </a>
@@ -69,7 +69,7 @@ export default function Nav() {
             aria-expanded={open}
             className="flex h-10 w-10 items-center justify-center border border-edge bg-bg text-ink md:hidden"
           >
-            <span className="text-lg leading-none">{open ? "✕" : "☰"}</span>
+            <span className="text-lg leading-none">{open ? "×" : "☰"}</span>
           </button>
         </div>
       </div>
@@ -103,7 +103,7 @@ export default function Nav() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="block bg-ink px-3 py-2.5 text-center text-sm font-semibold text-bg"
+                className="block bg-accent px-3 py-2.5 text-center text-sm font-semibold text-white"
               >
                 Falar comigo
               </a>

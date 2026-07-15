@@ -17,33 +17,35 @@ const siteUrl = "https://sergiorodrigues.dev.br";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Sérgio Rodrigues — Desenvolvedor Full Stack JavaScript",
+  title: "Sergio Rodrigues — Full Stack AI Builder",
   description:
-    "Desenvolvedor Full Stack JavaScript e CEO da Techlab e da SRADV. Construo sistemas, sites e automações com React, Node, TypeScript e IA.",
+    "Founder da TechLab e desenvolvedor full stack. Construo SaaS, sistemas web, automações com IA e interfaces de produto com Next.js, Supabase, Stripe e TypeScript.",
   keywords: [
     "desenvolvedor full stack",
+    "Full Stack AI Builder",
     "React",
     "Next.js",
     "Node.js",
     "TypeScript",
     "Belém",
-    "TECHLAB",
+    "TechLab",
+    "LEXOS",
   ],
-  authors: [{ name: "Sérgio Rodrigues" }],
+  authors: [{ name: "Sergio Rodrigues" }],
   openGraph: {
     type: "website",
     locale: "pt_BR",
     url: siteUrl,
-    title: "Sérgio Rodrigues — Desenvolvedor Full Stack JavaScript",
+    title: "Sergio Rodrigues — Full Stack AI Builder",
     description:
-      "Construo sistemas, sites e automações com React, Node, TypeScript e IA. CEO da Techlab e da SRADV e desenvolvedor full stack.",
-    siteName: "Sérgio Rodrigues",
+      "SaaS, sistemas web, automações com IA e interfaces de produto construídas com visão técnica e comercial.",
+    siteName: "Sergio Rodrigues",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sérgio Rodrigues — Desenvolvedor Full Stack JavaScript",
+    title: "Sergio Rodrigues — Full Stack AI Builder",
     description:
-      "Construo sistemas, sites e automações com React, Node, TypeScript e IA.",
+      "Construo SaaS, sistemas web, automações com IA e interfaces de produto.",
   },
 };
 
@@ -59,15 +61,12 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        {/* Aplica o tema antes da pintura (evita flash). Padrão claro para
-            reforçar o redesign; dark fica disponível no seletor. */}
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var t=localStorage.getItem('theme')||'light';var r=document.documentElement;r.classList.toggle('dark',t==='dark');r.classList.toggle('light',t!=='dark');}catch(e){document.documentElement.classList.add('light');}})();`,
           }}
         />
         <noscript>
-          {/* Sem JS, garante que o conteúdo com scroll-reveal apareça */}
           <style>{`.reveal{opacity:1 !important;transform:none !important;filter:none !important}`}</style>
         </noscript>
       </head>

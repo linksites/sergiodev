@@ -9,10 +9,19 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "LEXOS TechLab",
+    category: "Legal SaaS",
+    description:
+      "Sistema jurídico com processos, clientes, financeiro, IA contextual, billing, convites e fluxos inteligentes para escritórios.",
+    tags: ["Next.js", "Supabase", "IA"],
+    url: "https://techlab.sergiorodrigues.dev.br/",
+    image: "/images/projects/lexos.svg",
+  },
+  {
     title: "LinkSites",
     category: "SaaS",
     description:
-      "Plataforma SaaS para criação e gestão de sites com múltiplos links. Painel, autenticação e publicação automática.",
+      "Plataforma SaaS para criação e gestão de sites com múltiplos links, painel, autenticação e publicação automatizada.",
     tags: ["Next.js", "React", "Tailwind"],
     url: "https://linksites.vercel.app/",
     image: "/images/projects/linksites.webp",
@@ -21,7 +30,7 @@ export const projects: Project[] = [
     title: "Murilo Guará",
     category: "Landing page",
     description:
-      "Landing page para fisioterapeuta (acupuntura e quiropraxia) com design autoral de fundo claro, grids gradientes, motivo coluna + agulha em SVG animado e revelações cinematográficas no scroll.",
+      "Landing page para fisioterapeuta com design autoral, SVG animado, narrativa visual e experiência responsiva.",
     tags: ["React", "Framer Motion", "Tailwind"],
     url: "https://linksites.github.io/muriloguara/",
     image: "/images/projects/muriloguara.webp",
@@ -30,7 +39,7 @@ export const projects: Project[] = [
     title: "Barbearia Alfa",
     category: "Landing page",
     description:
-      "Landing page para barbearia com animações cinematográficas ligadas ao scroll (GSAP), rolagem suave e agendamento integrado ao WhatsApp.",
+      "Landing page para barbearia com animações ligadas ao scroll, rolagem suave e agendamento integrado ao WhatsApp.",
     tags: ["React", "GSAP", "Tailwind"],
     url: "https://linksites.github.io/alfa/",
     image: "/images/projects/barbearia-alfa.webp",
@@ -64,9 +73,9 @@ export const projects: Project[] = [
   },
   {
     title: "Ivan Leal JJ",
-    category: "Landing page",
+    category: "Marca pessoal",
     description:
-      "Site de marca pessoal para mestre de jiu-jitsu em Portugal: trajetória, vídeos, seminários e contato.",
+      "Site para mestre de jiu-jitsu em Portugal: trajetória, vídeos, seminários e contato.",
     tags: ["Next.js", "React", "Responsivo"],
     url: "https://ivanleal.vercel.app/",
     image: "/images/projects/ivanleal.webp",
@@ -84,7 +93,7 @@ export const projects: Project[] = [
     title: "Almeida Cunha",
     category: "Site institucional",
     description:
-      "Site institucional profissional com foco em SEO local, performance e conversão de visitantes em contatos.",
+      "Site profissional com foco em SEO local, performance e conversão de visitantes em contatos.",
     tags: ["Tailwind", "SEO", "Responsivo"],
     url: "https://linksites.github.io/almeida-cunha/",
     image: "/images/projects/almeida-cunha.webp",
@@ -100,7 +109,7 @@ export const projects: Project[] = [
   },
   {
     title: "SRADV",
-    category: "Site institucional",
+    category: "Site jurídico",
     description:
       "Site institucional com foco em SEO local, design sóbrio e otimização para conversão e agendamento online.",
     tags: ["Tailwind", "SEO", "Performance"],
@@ -109,16 +118,16 @@ export const projects: Project[] = [
   },
   {
     title: "Escritório Criminal",
-    category: "Site institucional",
+    category: "Site jurídico",
     description:
-      "Site institucional one-page com foco em apresentação profissional, SEO e canais diretos de contato.",
+      "Site one-page com foco em apresentação profissional, SEO e canais diretos de contato.",
     tags: ["HTML", "CSS", "SEO"],
     url: "https://linksites.github.io/sergiorodrigues/",
     image: "/images/projects/sergiorodrigues.webp",
   },
   {
     title: "Igor Freitas Advocacia",
-    category: "Site institucional",
+    category: "Site jurídico",
     description:
       "Site jurídico dark mode com paleta preto e prata, animações scroll com GSAP e identidade visual sofisticada.",
     tags: ["Next.js", "GSAP", "Tailwind"],

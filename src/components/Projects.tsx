@@ -5,22 +5,30 @@ import Parallax from "./Parallax";
 import { projects, type Project } from "@/content/projects";
 
 export default function Projects() {
+  const [lexos, ...otherProjects] = projects;
+
   return (
     <section id="projetos" className="border-t border-edge bg-bg px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           number="03"
           tag="Projetos"
-          title="Entrega visual com intenção comercial."
-          subtitle="Uma seleção de sites e sistemas reais, com segmentos diferentes e o mesmo cuidado: clareza, presença e conversão."
+          title="Produtos, sites e interfaces que já saíram do papel."
+          subtitle="Uma seleção de sistemas e experiências reais, com segmentos diferentes e o mesmo cuidado: clareza, presença e conversão."
         />
 
+        {lexos && (
+          <Reveal className="mb-5">
+            <LexosCard project={lexos} />
+          </Reveal>
+        )}
+
         <div className="grid gap-5 lg:grid-cols-12">
-          {projects.map((project, i) => (
+          {otherProjects.map((project, i) => (
             <Reveal
               key={project.url}
               delay={(i % 3) * 60}
-              className={i === 0 || i === 1 ? "lg:col-span-6" : "lg:col-span-4"}
+              className={i === 0 ? "lg:col-span-6" : i === 1 ? "lg:col-span-6" : "lg:col-span-4"}
             >
               <ProjectCard project={project} />
             </Reveal>
@@ -28,6 +36,90 @@ export default function Projects() {
         </div>
       </div>
     </section>
+  );
+}
+
+function LexosCard({ project }: { project: Project }) {
+  return (
+    <article className="group overflow-hidden border border-accent/35 bg-[#071019] text-white shadow-[0_28px_80px_rgba(22,163,74,0.14)] transition-all hover:-translate-y-1">
+      <div className="grid lg:grid-cols-[1.05fr_0.95fr]">
+        <a
+          href={project.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative min-h-[360px] overflow-hidden border-b border-white/10 bg-[#0b1118] p-6 sm:p-8 lg:border-b-0 lg:border-r"
+        >
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(34,197,94,0.26),transparent_34%),radial-gradient(circle_at_85%_20%,rgba(56,189,248,0.18),transparent_32%)]" />
+          <div className="relative flex h-full flex-col justify-between">
+            <div className="flex items-center justify-between gap-4">
+              <div>
+                <p className="font-mono text-xs uppercase tracking-[0.24em] text-green-300">
+                  Produto principal
+                </p>
+                <h3 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+                  LEXOS
+                </h3>
+                <p className="mt-2 font-mono text-sm uppercase tracking-[0.26em] text-green-400">
+                  TechLab
+                </p>
+              </div>
+              <span className="border border-green-400/35 bg-green-400/10 px-3 py-1.5 font-mono text-xs uppercase text-green-300">
+                Legal SaaS
+              </span>
+            </div>
+
+            <div className="mt-10 grid gap-3 sm:grid-cols-3">
+              {[
+                ["Processos", "gestão jurídica"],
+                ["IA", "assistente contextual"],
+                ["Billing", "trial e Stripe"],
+              ].map(([title, desc]) => (
+                <div key={title} className="border border-white/10 bg-white/[0.04] p-4">
+                  <p className="text-lg font-semibold">{title}</p>
+                  <p className="mt-2 text-xs leading-relaxed text-slate-300">{desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </a>
+
+        <div className="flex flex-col justify-between p-6 sm:p-8">
+          <div>
+            <div className="mb-4 flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="border border-green-400/25 bg-green-400/10 px-2 py-1 font-mono text-[10px] uppercase text-green-300"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <h3 className="text-3xl font-semibold tracking-tight">{project.title}</h3>
+            <p className="mt-4 text-base leading-relaxed text-slate-300">
+              {project.description}
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-3 border-t border-white/10 pt-6 sm:grid-cols-2">
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-green-500 px-5 py-3 text-center text-sm font-semibold text-[#052e16] transition-transform hover:-translate-y-0.5"
+            >
+              Abrir LEXOS
+            </a>
+            <a
+              href="#contato"
+              className="border border-white/15 bg-white/[0.04] px-5 py-3 text-center text-sm font-semibold text-white transition-colors hover:border-green-400/60"
+            >
+              Quero algo assim
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
   );
 }
 
@@ -43,7 +135,7 @@ function ProjectCard({ project }: { project: Project }) {
         <Parallax speed={0.04} className="absolute inset-0 scale-110">
           <Image
             src={project.image}
-            alt={`Captura do site ${project.title}`}
+            alt={`Captura do projeto ${project.title}`}
             fill
             sizes="(max-width: 768px) 100vw, 33vw"
             className="object-cover object-top transition-transform duration-500 group-hover:scale-105"

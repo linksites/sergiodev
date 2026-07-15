@@ -4,9 +4,9 @@ import Footer from "@/components/Footer";
 import JobsBoard from "@/components/JobsBoard";
 
 export const metadata: Metadata = {
-  title: "Vagas Tech | Sérgio Rodrigues",
+  title: "Vagas Tech | Sergio Rodrigues",
   description:
-    "Agregador de vagas remotas de tecnologia em tempo real, com filtros por stack, nível e fonte. Demo full stack construída por Sérgio Rodrigues.",
+    "Agregador de vagas remotas de tecnologia em tempo real, com filtros por stack, nível e fonte. Demo full stack construída por Sergio Rodrigues.",
 };
 
 export default function VagasPage() {

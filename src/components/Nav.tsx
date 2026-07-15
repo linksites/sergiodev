@@ -18,7 +18,7 @@ export default function Nav() {
     <nav className="fixed inset-x-0 top-0 z-50 px-3 pt-3">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between rounded-2xl border border-edge bg-surface/90 px-4 shadow-[0_14px_40px_color-mix(in_srgb,var(--color-ink)_10%,transparent)] backdrop-blur-xl sm:px-5">
         <Link
-          href="/"
+          href="/#top"
           className="flex items-center gap-3 font-mono text-sm tracking-tight text-ink"
           onClick={() => setOpen(false)}
         >
@@ -52,14 +52,12 @@ export default function Nav() {
         </ul>
 
         <div className="flex items-center gap-2">
-          <a
-            href="https://wa.me/5591982460001"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/#contato"
             className="hidden rounded-xl bg-accent px-4 py-2 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 sm:inline-block"
           >
             Falar comigo
-          </a>
+          </Link>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -96,15 +94,13 @@ export default function Nav() {
               </Link>
             </li>
             <li className="mt-2">
-              <a
-                href="https://wa.me/5591982460001"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/#contato"
                 onClick={() => setOpen(false)}
                 className="block rounded-xl bg-accent px-3 py-2.5 text-center text-sm font-semibold text-white"
               >
                 Falar comigo
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

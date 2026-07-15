@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const navLinks = [
   { href: "#sobre", label: "Sobre" },
   { href: "#stack", label: "Stack" },
@@ -15,17 +13,13 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-wrap justify-between gap-10">
           <div className="max-w-sm">
-            <div className="flex items-center gap-3">
-              <Image
-                src="/images/logo-sr.webp"
-                alt="Sergio Rodrigues"
-                width={40}
-                height={40}
-                className="border border-bg/25"
-              />
-              <span className="font-mono text-sm text-bg">
+            <div>
+              <p className="font-mono text-xl font-semibold tracking-tight text-bg">
                 sergio<span className="text-accent">.dev</span>
-              </span>
+              </p>
+              <p className="mt-1 font-mono text-xs uppercase tracking-[0.22em] text-bg/45">
+                TechLab / Full Stack AI Builder
+              </p>
             </div>
             <p className="mt-4 text-sm leading-relaxed text-bg/70">
               Founder da TechLab. SaaS, sistemas web e automações com IA, da

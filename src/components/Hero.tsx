@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Parallax from "./Parallax";
 
 const metrics = [
@@ -72,24 +71,7 @@ export default function Hero() {
 
           <div className="grid gap-6">
             <Parallax speed={0.06} className="min-h-[420px]">
-              <div className="relative h-full min-h-[420px] overflow-hidden border border-edge bg-surface">
-                <Image
-                  src="/images/sergio-rodrigues.webp"
-                  alt="Sergio Rodrigues"
-                  fill
-                  loading="eager"
-                  sizes="(max-width: 1024px) 100vw, 42vw"
-                  className="object-cover object-top"
-                />
-                <div className="absolute inset-x-0 bottom-0 border-t border-edge bg-surface/92 p-5 backdrop-blur">
-                  <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
-                    Sergio Rodrigues
-                  </p>
-                  <p className="mt-2 text-xl font-semibold">
-                    CEO TechLab &amp; SRADV · produto, direito e tecnologia
-                  </p>
-                </div>
-              </div>
+              <HeroSystemPanel />
             </Parallax>
 
             <ProductPanel />
@@ -97,6 +79,45 @@ export default function Hero() {
         </div>
       </div>
     </section>
+  );
+}
+
+function HeroSystemPanel() {
+  return (
+    <div className="relative h-full min-h-[420px] overflow-hidden border border-edge bg-[#071019] p-6 text-white shadow-2xl">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(34,197,94,0.28),transparent_34%),radial-gradient(circle_at_88%_8%,rgba(56,189,248,0.18),transparent_30%)]" />
+      <div className="relative flex h-full flex-col justify-between">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.22em] text-green-300">
+              TechLab Studio
+            </p>
+            <h2 className="mt-4 max-w-md text-4xl font-semibold leading-tight tracking-tight">
+              Produto, IA e operação conectados.
+            </h2>
+          </div>
+          <span className="border border-green-400/35 bg-green-400/10 px-3 py-1.5 font-mono text-xs uppercase text-green-300">
+            Live
+          </span>
+        </div>
+
+        <div className="mt-10 grid gap-3">
+          {[
+            ["01", "Descoberta", "clareza de problema, usuario e oferta"],
+            ["02", "Arquitetura", "Next.js, Supabase, Stripe e IA"],
+            ["03", "Entrega", "interface, dados, deploy e melhoria continua"],
+          ].map(([step, title, desc]) => (
+            <div key={step} className="grid grid-cols-[56px_1fr] gap-4 border border-white/10 bg-white/[0.04] p-4">
+              <span className="font-mono text-sm text-green-300">{step}</span>
+              <div>
+                <p className="font-semibold">{title}</p>
+                <p className="mt-1 text-sm leading-relaxed text-slate-300">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
 

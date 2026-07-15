@@ -1,4 +1,3 @@
-import Image from "next/image";
 import SectionHeading from "./SectionHeading";
 import Reveal from "./Reveal";
 
@@ -13,6 +12,13 @@ const strengths = [
   "Produto juridico",
 ];
 
+const principles = [
+  ["01", "Operação real", "Fluxos desenhados para uso diário, não só apresentação."],
+  ["02", "Velocidade", "Primeiras versões úteis, com caminho claro de evolução."],
+  ["03", "Acabamento", "Interface limpa, responsiva e coerente com o mercado."],
+  ["04", "Integração", "Dados, IA, pagamento e automação no mesmo raciocínio."],
+];
+
 export default function About() {
   return (
     <section id="sobre" className="border-t border-edge px-6 py-24">
@@ -25,16 +31,23 @@ export default function About() {
         />
 
         <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-          <Reveal className="relative min-h-[520px] overflow-hidden border border-edge bg-surface">
-            <Image
-              src="/images/sergio-rodrigues.webp"
-              alt="Sergio Rodrigues"
-              fill
-              sizes="(max-width: 1024px) 100vw, 40vw"
-              className="object-cover object-top"
-            />
-            <div className="absolute left-4 top-4 border border-accent/35 bg-surface/90 px-3 py-2 font-mono text-xs uppercase text-accent backdrop-blur">
+          <Reveal className="border border-edge bg-[#071019] p-6 text-white sm:p-8">
+            <p className="font-mono text-xs uppercase tracking-[0.24em] text-green-300">
               TechLab / SRADV / LEXOS
+            </p>
+            <h3 className="mt-5 text-3xl font-semibold leading-tight tracking-tight">
+              Produto técnico com leitura comercial e jurídica.
+            </h3>
+            <div className="mt-8 grid gap-3">
+              {principles.map(([step, title, desc]) => (
+                <div key={step} className="grid grid-cols-[48px_1fr] gap-4 border border-white/10 bg-white/[0.04] p-4">
+                  <span className="font-mono text-sm text-green-300">{step}</span>
+                  <div>
+                    <p className="font-semibold">{title}</p>
+                    <p className="mt-1 text-sm leading-relaxed text-slate-300">{desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </Reveal>
 

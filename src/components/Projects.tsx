@@ -5,7 +5,7 @@ import Parallax from "./Parallax";
 import { projects, type Project } from "@/content/projects";
 
 export default function Projects() {
-  const [lexos, ...otherProjects] = projects;
+  const otherProjects = projects;
 
   return (
     <section id="projetos" className="border-t border-edge bg-bg px-6 py-24">
@@ -17,11 +17,6 @@ export default function Projects() {
           subtitle="Uma seleção de sistemas e experiências reais, com segmentos diferentes e o mesmo cuidado: clareza, presença e conversão."
         />
 
-        {lexos && (
-          <Reveal className="mb-5">
-            <LexosCard project={lexos} />
-          </Reveal>
-        )}
 
         <div className="grid gap-5 lg:grid-cols-12">
           {otherProjects.map((project, i) => (
@@ -39,7 +34,7 @@ export default function Projects() {
   );
 }
 
-function LexosCard({ project }: { project: Project }) {
+export function LexosCard({ project }: { project: Project }) {
   return (
     <article className="group overflow-hidden border border-accent/35 bg-[#071019] text-white shadow-[0_28px_80px_rgba(22,163,74,0.14)] transition-all hover:-translate-y-1">
       <div className="grid lg:grid-cols-[1.05fr_0.95fr]">

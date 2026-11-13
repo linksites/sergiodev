@@ -1,7 +1,7 @@
 import Parallax from "./Parallax";
 
 const metrics = [
-  ["LEXOS", "SaaS juridico em producao"],
+  ["Web", "sistemas e interfaces"],
   ["IA", "agentes, ferramentas e automacao"],
   ["Full", "produto, codigo e deploy"],
 ];
@@ -26,25 +26,26 @@ export default function Hero() {
               </div>
 
               <p className="mb-5 font-mono text-xs uppercase tracking-[0.24em] text-faint">
-                Full Stack AI Builder
+                Desenvolvedor Full Stack · Advogado Criminalista
               </p>
 
               <h1 className="max-w-4xl text-balance text-5xl font-semibold leading-[0.95] tracking-tight sm:text-7xl lg:text-8xl">
-                Eu construo sistemas SaaS com IA que viram operação real.
+                Sergio Rodrigues
               </h1>
 
               <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted sm:text-xl">
-                Do zero ao produto em produção: arquitetura, UX, automações,
-                integrações e interfaces que ajudam empresas a vender, atender e
-                operar melhor.
+                Desenvolvedor full stack, advogado criminalista e fundador da TechLab,
+                com formação em Ciências Criminais. Projeto e desenvolvo
+                sistemas web, interfaces e integrações que simplificam a operação
+                de empresas, da definição do problema à entrega em produção.
               </p>
 
               <div className="mt-9 flex flex-wrap gap-3">
                 <a
-                  href="#lexos"
+                  href="#projetos"
                   className="bg-accent px-6 py-3.5 text-sm font-semibold text-white shadow-[0_18px_40px_color-mix(in_srgb,var(--color-accent)_28%,transparent)] transition-transform hover:-translate-y-0.5"
                 >
-                  Ver LEXOS
+                  Conhecer projetos
                 </a>
                 <a
                   href="https://wa.me/5591982460001"
@@ -74,7 +75,6 @@ export default function Hero() {
               <HeroSystemPanel />
             </Parallax>
 
-            <ProductPanel />
           </div>
         </div>
       </div>
@@ -121,7 +121,7 @@ function HeroSystemPanel() {
   );
 }
 
-function ProductPanel() {
+export function ProductPanel() {
   return (
     <div className="animate-fade-up [animation-delay:120ms]">
       <div className="overflow-hidden border border-[#1f2a3a] bg-[#0b1118]/95 shadow-2xl backdrop-blur">

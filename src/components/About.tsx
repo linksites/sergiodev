@@ -33,7 +33,7 @@ export default function About() {
         <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
           <Reveal className="border border-edge bg-[#071019] p-6 text-white sm:p-8">
             <p className="font-mono text-xs uppercase tracking-[0.24em] text-green-300">
-              TechLab / SRADV / LEXOS
+              Sergio Rodrigues · TechLab
             </p>
             <h3 className="mt-5 text-3xl font-semibold leading-tight tracking-tight">
               Produto técnico com leitura comercial e jurídica.
@@ -65,9 +65,10 @@ export default function About() {
                   mesma obsessão: reduzir trabalho manual e aumentar resultado.
                 </p>
                 <p>
-                  Minha principal vitrine hoje é o LEXOS, um legal OS com IA,
-                  financeiro, clientes, processos, billing e fluxos inteligentes
-                  para escritórios de advocacia.
+                  Atuo no desenvolvimento de produtos digitais para diferentes
+                  segmentos, conectando experiência do usuário, arquitetura de
+                  software e necessidades de negócio. Minha formação jurídica
+                  também contribui para uma leitura cuidadosa de processos e dados.
                 </p>
               </div>
             </Reveal>

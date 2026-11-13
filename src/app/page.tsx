@@ -1,6 +1,5 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
-import LexosSpotlight from "@/components/LexosSpotlight";
 import About from "@/components/About";
 import Stack from "@/components/Stack";
 import Projects from "@/components/Projects";
@@ -14,7 +13,6 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <LexosSpotlight />
         <About />
         <Stack />
         <Projects />
